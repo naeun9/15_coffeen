@@ -1,0 +1,8 @@
+<!-- 15_coffeen_중간과제/assets/icons/15_icon_tab_board.svg -->
+<!-- 내 보드 탭 메모 아이콘 -->
+<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="4" width="12" height="12" rx="1.5" fill="none" stroke="#FFFFFF" stroke-width="1.4"></rect>
+  <line x1="6.5" y1="8" x2="13.5" y2="8" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"></line>
+  <line x1="6.5" y1="11" x2="11.5" y2="11" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"></line>
+  <line x1="6.5" y1="14" x2="9.5" y2="14" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"></line>
+</svg>

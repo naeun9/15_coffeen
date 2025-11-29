@@ -1,0 +1,116 @@
+/* 15_coffeen_중간과제/common/15_coffeen_common.css */
+/* 공통 레이아웃 및 헤더 스타일 */
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --primary: #a0826d;
+  --accent-soft: #d7e2d7;
+  --border: #e5d5c1;
+  --star: #ffd256;
+  --text-main: #726A55;
+  --text-sub: #AAA699;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+.coffeen-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--card);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo img {
+  height: 40px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-item {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-sub);
+  padding-bottom: 4px;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background-color: var(--primary);
+  transition: width 0.2s ease;
+}
+
+body.mypage-no-nav-anim .coffeen-header .nav-item::after {
+  transition: none;
+}
+
+.nav-item:hover {
+  color: var(--primary);
+}
+
+.nav-item.is-active {
+  color: var(--primary);
+}
+
+.nav-item.is-active::after {
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .header-inner {
+    max-width: 960px;
+  }
+
+  .header-nav {
+    gap: 28px;
+  }
+}

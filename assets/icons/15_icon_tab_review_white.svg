@@ -1,0 +1,8 @@
+<!-- 15_coffeen_중간과제/assets/icons/15_icon_tab_review.svg -->
+<!-- 내 후기 탭 그리드 아이콘 -->
+<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+  <rect x="3.5" y="4" width="5" height="5" rx="1" fill="none" stroke="#FFFFFF" stroke-width="1.3"></rect>
+  <rect x="11.5" y="4" width="5" height="5" rx="1" fill="none" stroke="#FFFFFF" stroke-width="1.3"></rect>
+  <rect x="3.5" y="11" width="5" height="5" rx="1" fill="none" stroke="#FFFFFF" stroke-width="1.3"></rect>
+  <rect x="11.5" y="11" width="5" height="5" rx="1" fill="none" stroke="#FFFFFF" stroke-width="1.3"></rect>
+</svg>

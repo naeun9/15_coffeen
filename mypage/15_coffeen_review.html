@@ -1,0 +1,178 @@
+<!-- 15_coffeen_중간과제/mypage/15_coffeen_review.html -->
+<!-- 마이페이지 내 후기 화면 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Coffeen - My Page</title>
+  <link rel="stylesheet" href="../common/15_coffeen_common.css" />
+  <link rel="stylesheet" href="15_coffeen_review.css" />
+  <link rel="stylesheet" href="15_coffeen_collection.css" />
+</head>
+<body data-current-page="mypage">
+  <header class="coffeen-header">
+    <div class="header-inner">
+      <a href="../home/15_coffeen_home.html" class="header-logo">
+        <img src="../assets/images/15_logo.png" alt="Coffeen 로고" />
+      </a>
+      <nav class="header-nav">
+        <a href="../home/15_coffeen_home.html" class="nav-item" data-page="home">home</a>
+        <a href="../explore/15_coffeen_explore.html" class="nav-item" data-page="explore">explore</a>
+        <a href="../map/15_coffeen_map.html" class="nav-item" data-page="map">map</a>
+        <a href="../write/15_coffeen_write.html" class="nav-item" data-page="write">write</a>
+        <a href="../mypage/15_coffeen_review.html" class="nav-item" data-page="mypage">my page</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mypage-container">
+    <section class="profile-card">
+      <div class="profile-avatar"></div>
+      <div class="profile-info">
+        <h1 class="profile-name">카페러버</h1>
+        <p class="profile-bio">커피와 카페를 사랑하는 사람</p>
+        <div class="profile-stats">
+          <div class="profile-stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">후기</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">저장</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">35</span>
+            <span class="stat-label">팔로워</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">234</span>
+            <span class="stat-label">팔로잉</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mypage-tabs">
+      <button type="button" class="tab-button is-active" data-tab="reviews">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>내 후기</span>
+      </button>
+
+      <button type="button" class="tab-button" data-tab="saved">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>저장한 카페</span>
+      </button>
+
+      <button type="button" class="tab-button" data-tab="board">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>내 보드</span>
+      </button>
+    </section>
+
+    <section class="tab-panel" data-tab-panel="reviews">
+      <section class="review-list" id="reviewList">
+        <article class="cafe-card">
+          <div class="cafe-image-wrap">
+            <img
+              src="../assets/images/15_cafe4.jpeg"
+              alt="브레빌 성수"
+              class="cafe-image"
+            />
+            <button type="button" class="like-badge">
+              <img src="../assets/icons/15_icon_filled_heart.svg" alt="" class="like-icon" />
+              <span class="like-count-saved">23</span>
+            </button>
+          </div>
+          <div class="cafe-content">
+            <div class="cafe-title-row">
+              <h2 class="cafe-name">브레빌 성수</h2>
+            </div>
+            <div class="cafe-rating">
+              <img src="../assets/icons/15_icon_star.svg" alt="" class="star-icon" />
+              <span class="rating-score">4.8</span>
+            </div>
+            <div class="cafe-meta-row">
+              <div class="cafe-location">
+                <img src="../assets/icons/15_icon_location.svg" alt="" class="location-icon" />
+                <span class="location-text">성수동</span>
+              </div>
+              <span class="cafe-date">2024.01.15</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="cafe-card">
+          <div class="cafe-image-wrap">
+            <img
+              src="../assets/images/15_cafe1.jpeg"
+              alt="파니엔테"
+              class="cafe-image"
+            />
+            <button type="button" class="like-badge">
+              <img src="../assets/icons/15_icon_filled_heart.svg" alt="" class="like-icon" />
+              <span class="like-count-saved">15</span>
+            </button>
+          </div>
+          <div class="cafe-content">
+            <div class="cafe-title-row">
+              <h2 class="cafe-name">파니엔테</h2>
+            </div>
+            <div class="cafe-rating">
+              <img src="../assets/icons/15_icon_star.svg" alt="" class="star-icon" />
+              <span class="rating-score">4.6</span>
+            </div>
+            <div class="cafe-meta-row">
+              <div class="cafe-location">
+                <img src="../assets/icons/15_icon_location.svg" alt="" class="location-icon" />
+                <span class="location-text">강남</span>
+              </div>
+              <span class="cafe-date">2024.01.10</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="cafe-card">
+          <div class="cafe-image-wrap">
+            <img
+              src="../assets/images/15_cafe5.jpeg"
+              alt="르빵홀즈"
+              class="cafe-image"
+            />
+            <button type="button" class="like-badge">
+              <img src="../assets/icons/15_icon_heart.svg" alt="" class="like-icon" />
+              <span class="like-count">31</span>
+            </button>
+          </div>
+          <div class="cafe-content">
+            <div class="cafe-title-row">
+              <h2 class="cafe-name">르빵홀즈</h2>
+            </div>
+            <div class="cafe-rating">
+              <img src="../assets/icons/15_icon_star.svg" alt="" class="star-icon" />
+              <span class="rating-score">4.9</span>
+            </div>
+            <div class="cafe-meta-row">
+              <div class="cafe-location">
+                <img src="../assets/icons/15_icon_location.svg" alt="" class="location-icon" />
+                <span class="location-text">강남</span>
+              </div>
+              <span class="cafe-date">2024.01.05</span>
+            </div>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <section class="tab-panel tab-panel-empty" data-tab-panel="saved" hidden>
+      <p class="empty-text">아직 저장한 카페가 없어요.</p>
+    </section>
+
+    <section class="tab-panel tab-panel-empty" data-tab-panel="board" hidden>
+      <p class="empty-text">아직 작성한 보드가 없어요.</p>
+    </section>
+  </main>
+
+  <script src="../common/15_coffeen_common.js"></script>
+  <script src="15_coffeen_review.js"></script>
+</body>
+</html>

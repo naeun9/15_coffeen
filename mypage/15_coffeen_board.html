@@ -1,0 +1,192 @@
+<!-- 15_coffeen_중간과제/mypage/15_coffeen_board.html -->
+<!-- 마이페이지 내 보드 화면 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Coffeen - My Page</title>
+  <link rel="stylesheet" href="../common/15_coffeen_common.css" />
+  <link rel="stylesheet" href="15_coffeen_board.css" />
+</head>
+<body data-current-page="mypage">
+  <header class="coffeen-header">
+    <div class="header-inner">
+      <a href="../home/15_coffeen_home.html" class="header-logo">
+        <img src="../assets/images/15_logo.png" alt="Coffeen 로고" />
+      </a>
+      <nav class="header-nav">
+        <a href="../home/15_coffeen_home.html" class="nav-item" data-page="home">home</a>
+        <a href="../explore/15_coffeen_explore.html" class="nav-item" data-page="explore">explore</a>
+        <a href="../map/15_coffeen_map.html" class="nav-item" data-page="map">map</a>
+        <a href="../write/15_coffeen_write.html" class="nav-item" data-page="write">write</a>
+        <a href="../mypage/15_coffeen_review.html" class="nav-item" data-page="mypage">my page</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mypage-container">
+    <section class="profile-card">
+      <div class="profile-avatar"></div>
+      <div class="profile-info">
+        <h1 class="profile-name">카페러버</h1>
+        <p class="profile-bio">커피와 카페를 사랑하는 사람</p>
+        <div class="profile-stats">
+          <div class="profile-stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">후기</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">저장</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">35</span>
+            <span class="stat-label">팔로워</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">234</span>
+            <span class="stat-label">팔로잉</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mypage-tabs">
+      <button type="button" class="tab-button" data-tab="reviews">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>내 후기</span>
+      </button>
+      <button type="button" class="tab-button" data-tab="saved">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>저장한 카페</span>
+      </button>
+      <button type="button" class="tab-button is-active" data-tab="board">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>내 보드</span>
+      </button>
+    </section>
+
+    <section class="board-section">
+      <div class="board-list">
+        <!-- 보드 카드 1 -->
+        <article class="board-card">
+          <div class="board-images">
+            <div class="board-main-image">
+              <img src="../assets/images/15_cafe1.jpeg" alt="데이트하기 좋은 카페" class="board-image main" />
+            </div>
+            <div class="board-sub-images">
+              <img src="../assets/images/15_cafe2.jpeg" alt="데이트하기 좋은 카페" class="board-image sub" />
+              <img src="../assets/images/15_cafe3.jpeg" alt="데이트하기 좋은 카페" class="board-image sub" />
+            </div>
+          </div>
+          <div class="board-content">
+            <h3 class="board-name">데이트하기 좋은 카페</h3>
+            <span class="board-count">4개 카페</span>
+          </div>
+        </article>
+
+        <!-- 보드 카드 2 -->
+        <article class="board-card">
+          <div class="board-images">
+            <div class="board-main-image">
+              <img src="../assets/images/15_cafe4.jpeg" alt="작업하기 좋은 카페" class="board-image main" />
+            </div>
+            <div class="board-sub-images">
+              <img src="../assets/images/15_cafe5.jpeg" alt="작업하기 좋은 카페" class="board-image sub" />
+              <img src="../assets/images/15_cafe6.jpeg" alt="작업하기 좋은 카페" class="board-image sub" />
+            </div>
+          </div>
+          <div class="board-content">
+            <h3 class="board-name">작업하기 좋은 카페</h3>
+            <span class="board-count">3개 카페</span>
+          </div>
+        </article>
+
+        <!-- 새 보드 만들기 카드 -->
+        <article class="board-card create-board-card">
+          <button type="button" class="create-board-button" id="open-create-board">
+            <span class="plus-icon">+</span>
+            <span>새 보드 만들기</span>
+          </button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- 새 보드 만들기 팝업 -->
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="popup-container">
+      <header class="popup-header">
+        <h2 class="popup-title">새 보드 만들기</h2>
+        <button type="button" class="popup-close" id="close-popup" aria-label="닫기">✕</button>
+      </header>
+
+      <section class="popup-body">
+        <div class="popup-field">
+          <label for="board-title" class="popup-label">보드 제목</label>
+          <input
+            type="text"
+            id="board-title"
+            class="popup-input"
+            placeholder="예: 데이트하기 좋은 카페"
+          />
+        </div>
+
+        <div class="popup-field popup-field-list">
+          <div class="popup-list-header">
+            <span class="popup-label">저장한 카페 목록</span>
+            <span class="popup-selected-count" id="selected-count">0개 선택됨</span>
+          </div>
+
+          <ul class="popup-cafe-list">
+            <li class="popup-cafe-item">
+              <label class="popup-cafe-row">
+                <input type="checkbox" class="popup-cafe-checkbox" />
+                <div class="popup-cafe-card">
+                  <img src="../assets/images/15_cafe1.jpeg" alt="커피빈 강남점" class="popup-cafe-thumb" />
+                  <div class="popup-cafe-info">
+                    <p class="popup-cafe-name">커피빈 강남점</p>
+                    <p class="popup-cafe-address">강남구 테헤란로</p>
+                  </div>
+                </div>
+              </label>
+            </li>
+            <li class="popup-cafe-item">
+              <label class="popup-cafe-row">
+                <input type="checkbox" class="popup-cafe-checkbox" />
+                <div class="popup-cafe-card">
+                  <img src="../assets/images/15_cafe2.jpeg" alt="커피빈 강남점" class="popup-cafe-thumb" />
+                  <div class="popup-cafe-info">
+                    <p class="popup-cafe-name">커피빈 강남점</p>
+                    <p class="popup-cafe-address">강남구 테헤란로</p>
+                  </div>
+                </div>
+              </label>
+            </li>
+            <li class="popup-cafe-item">
+              <label class="popup-cafe-row">
+                <input type="checkbox" class="popup-cafe-checkbox" />
+                <div class="popup-cafe-card">
+                  <img src="../assets/images/15_cafe3.jpeg" alt="커피빈 강남점" class="popup-cafe-thumb" />
+                  <div class="popup-cafe-info">
+                    <p class="popup-cafe-name">커피빈 강남점</p>
+                    <p class="popup-cafe-address">강남구 테헤란로</p>
+                  </div>
+                </div>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <footer class="popup-footer">
+        <button type="button" class="popup-btn popup-btn-cancel" id="cancel-btn">취소</button>
+        <button type="button" class="popup-btn popup-btn-primary" id="create-board-btn">보드 만들기</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="../common/15_coffeen_common.js"></script>
+  <script src="15_coffeen_board.js"></script>
+</body>
+</html>
