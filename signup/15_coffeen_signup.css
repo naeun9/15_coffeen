@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  background: #FAFAFA;
+  font-family: "Poppins", sans-serif;
+  color: #726A55;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 420px;
+  padding: 60px 0;
+}
+
+.title-section h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.title-section p {
+  font-size: 14px;
+}
+
+.title-section a {
+  color: #726A55;
+  text-decoration: underline;
+}
+.title-section {
+  text-align: center;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.signup-form label {
+  font-size: 15px;
+}
+
+.signup-form input,
+.signup-form select {
+  width: 100%;
+  height: 48px;
+  box-sizing: border-box; 
+  border-radius: 12px;
+  border: 1px solid rgba(102, 102, 102, 0.35);
+  background: #F5F5F5;
+  padding-left: 14px;
+  font-size: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.signup-form select {
+  padding-right: 44px; 
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%238C8679' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 12px 8px;
+}
+
+.signup-form select:invalid {
+  color: #a9a399; 
+}
+
+.signup-form select:not(:invalid) {
+  color: #726A55;
+}
+
+.pw-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.pw-row > div {
+  flex: 1 1 0;
+  min-width: 0; 
+}
+
+.pw-row > div + div {
+  margin-left: 12px;
+}
+
+.pw-row input {
+  width: 100%;
+}
+
+.pw-ex {
+  margin-top: -4px;
+  font-size: 13px;
+  color: #666;
+}
+
+.next-btn {
+  margin-top: 16px;
+  height: 54px;
+  border: none;
+  background: #A0826D;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.next-btn:hover,
+.next-btn:active {
+  background: #8f6a53;
+}

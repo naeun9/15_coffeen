@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link rel="stylesheet" href="15_coffeen_login.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <main class="container">
+
+        <!-- Header -->
+        <header class="title-section">
+          <h1>Login</h1>
+          <p>
+            계정이 없으신가요?
+            <a href="../signup/15_coffeen_signup.html">회원가입</a>
+          </p>
+        </header>
+
+        <!-- 소셜 로그인 -->
+        <section class="social">
+          <a href="#" class="social-btn google">
+            <img src="../assets/images/15_google.png" alt="Google 로고" />
+            <span>Google로 계속하기</span>
+          </a>
+
+          <a href="#" class="social-btn naver">
+            <img src="../assets/images/15_naver.png" alt="Naver 로고" />
+            <span>Naver로 계속하기</span>
+          </a>
+        </section>
+
+        <!-- 구분선 -->
+        <div class="divider">
+          <div class="divider-line"></div>
+          <span>또는 이메일로 계속하기</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- 로그인 폼 -->
+        <form id="loginForm" class="signup-form">
+
+          <label for="login-id">아이디</label>
+          <input
+            type="text"
+            id="login-id"
+            placeholder="아이디를 입력하세요"
+            required
+          />
+
+          <label for="login-password">비밀번호</label>
+          <div class="pw-box">
+            <input
+              type="password"
+              id="login-password"
+              placeholder="비밀번호를 입력하세요"
+              required
+            />
+          </div>
+
+          <div class="forgot-box">
+            <a href="#" class="forgot-link">비밀번호를 잊으셨나요?</a>
+          </div>
+
+          <label class="remember-label">
+            <input
+              type="checkbox"
+              id="remember"
+            />
+            로그인 상태 유지
+          </label>
+
+          <button type="submit" class="next-btn">로그인</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="15_coffeen_login.js"></script>
+  </body>
+</html>

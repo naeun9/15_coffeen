@@ -20,8 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const navItems = document.querySelectorAll(".coffeen-header .nav-item");
   navItems.forEach((item) => {
+    item.removeAttribute("aria-current");
     if (item.dataset.page === current) {
       item.classList.add("is-active");
+      item.setAttribute("aria-current", "page");
     }
   });
 });

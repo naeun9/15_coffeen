@@ -1,0 +1,10 @@
+[
+  {
+    "id": "test",
+    "password": "1234",
+    "name": "테스트 계정",
+    "email": "test@test.com",
+    "phone": "010-0000-0000",
+    "preferredArea": "용산구"
+  }
+]

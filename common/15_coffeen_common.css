@@ -10,6 +10,7 @@
   --text-main: #726A55;
   --text-sub: #AAA699;
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04);
+  --nav-muted: rgba(114, 106, 85, 0.5);
 }
 
 *,
@@ -53,7 +54,12 @@ button {
   padding: 16px 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 48px;
+}
+
+.header-logo {
+  margin-right: auto;
 }
 
 .header-logo img {
@@ -97,12 +103,88 @@ body.mypage-no-nav-anim .coffeen-header .nav-item::after {
   color: var(--primary);
 }
 
+.nav-item:hover::after {
+  width: 100%;
+}
+
 .nav-item.is-active {
   color: var(--primary);
 }
 
 .nav-item.is-active::after {
   width: 100%;
+}
+
+/* Explore & MyPage: 통일된 네비게이션 효과 */
+body[data-current-page="explore"] .coffeen-header,
+body[data-current-page="mypage"] .coffeen-header {
+  min-height: 80px;
+  background: #fafafa;
+  border-bottom: 1px solid rgba(229, 213, 193, 0.2);
+  box-shadow: 0 4px 4px rgba(160, 130, 109, 0.03);
+  backdrop-filter: blur(8px);
+}
+
+body[data-current-page="explore"] .header-inner,
+body[data-current-page="mypage"] .header-inner {
+  max-width: 1229px;
+  padding: 12px 32px;
+  height: 80px;
+}
+
+body[data-current-page="explore"] .header-logo img,
+body[data-current-page="mypage"] .header-logo img {
+  height: 56px;
+}
+
+body[data-current-page="explore"] .header-nav,
+body[data-current-page="mypage"] .header-nav {
+  gap: 32px;
+}
+
+body[data-current-page="explore"] .nav-item,
+body[data-current-page="mypage"] .nav-item {
+  font-weight: 400;
+  letter-spacing: 0.09px;
+  line-height: 24px;
+  color: var(--nav-muted);
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body[data-current-page="explore"] .nav-item::after,
+body[data-current-page="mypage"] .nav-item::after {
+  left: 12px;
+  bottom: -6px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    var(--primary) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+body[data-current-page="explore"] .nav-item:hover,
+body[data-current-page="mypage"] .nav-item:hover {
+  color: var(--text-main);
+}
+
+body[data-current-page="explore"] .nav-item:hover::after,
+body[data-current-page="mypage"] .nav-item:hover::after {
+  width: calc(100% - 24px);
+}
+
+body[data-current-page="explore"] .nav-item.is-active,
+body[data-current-page="mypage"] .nav-item.is-active {
+  color: var(--primary);
+  background-color: rgba(160, 130, 109, 0.08);
+  box-shadow: inset 0 -4px 12px rgba(160, 130, 109, 0.08);
+}
+
+body[data-current-page="explore"] .nav-item.is-active::after,
+body[data-current-page="mypage"] .nav-item.is-active::after {
+  width: calc(100% - 24px);
 }
 
 @media (max-width: 1200px) {
