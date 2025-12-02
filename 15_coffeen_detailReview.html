@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>detail page-menu</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../detail/detailpage.css">
+        <link rel="stylesheet" href="../common/15_coffeen_common.css">
+        <style>
+        </style>
+    </head>
+
+    <body style="background-color: #F5F5F5;">
+        <!--메뉴바-->
+        <header class="coffeen-header">
+            <div class="header-inner">
+                <a href="../home/15_coffeen_home.html" class="header-logo">
+                <img src="../assets/images/15_logo.png" alt="Coffeen 로고" />
+                </a>
+                <nav class="header-nav">
+                    <a href="../home/15_coffeen_home.html" class="nav-item" data-page="home">home</a>
+                    <a href="../explore/15_coffeen_explore.html" class="nav-item" data-page="explore">explore</a>
+                    <a href="../map/15_coffeen_map.html" class="nav-item" data-page="map">map</a>
+                    <a href="../write/15_coffeen_write.html" class="nav-item" data-page="write">write</a>
+                    <a href="../mypage/15_coffeen_review.html" class="nav-item" data-page="mypage">my page</a>
+                </nav>
+            </div>
+        </header>
+        <!--------->
+
+        <!--뒤로가기-->
+        <nav class="go-back">
+            <button class="back-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M1 12H12 M6 17L1 12L6 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+            뒤로가기</button>
+        </nav>
+        <!--------->
+
+        <!-------메뉴바 아래 공통 컨테이너(정보)------->
+        <div class="top-container">
+
+            <!---정보 블록-->
+            <div class="detail-container">
+                <!---사진모음-->
+                <section class="photos-container">
+                    <div class="main-photo">
+                        <img src="../../assets/images/15_cafe1.jpeg" alt="" />
+                    </div>
+                    <div class="sub-photo">
+                        <img class="content" src="../../assets/images/15_cafe1.jpeg" alt="">
+                        <img class="content" src="../../assets/images/15_cafe1.jpeg" alt="">
+                        <img class="content" src="../../assets/images/15_cafe1.jpeg" alt="">
+                    </div>
+                </section>
+                <!---정보모음-->
+                <section class="info-container">
+                    <!---정보-->
+                    <div class="info">
+                        <div class="top-inner">
+                            <a id="cafe-name">오트 성수</a>
+                            <button class="share">
+                                <!---공유 모양-->
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                <circle cx="15" cy="4.1667" r="2.5" fill="currentColor" stroke="#A0826D" stroke-width="1.666"/>
+                                <circle cx="5" cy="10" r="2.5" fill="currentColor" stroke="#A0826D" stroke-width="1.666"/>
+                                <circle cx="15" cy="15.8333" r="2.5" fill="currentColor" stroke="#A0826D" stroke-width="1.666"/>
+                                <path d="M7.15833 11.2583L12.85 14.575" stroke="#A0826D" stroke-width="1.666" stroke-linecap="round"/>
+                                <path d="M12.8417 5.425L7.15833 8.74167" stroke="#A0826D" stroke-width="1.666" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="rate"> 
+                            <!-- 15_coffeen_중간과제/assets/icons/15_icon_star.svg -->
+                            <!-- 별점 아이콘 -->
+                            <svg id="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
+                            </svg>
+                            <a class="text">4.8</a>
+                            <a class="smalltxt">(234 리뷰)</a>
+                        </div>
+                        <div class="middle">
+                            <!---주소-->
+                            <div>
+                                <span>
+                                    <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.6666 8.33332C16.6666 12.4942 12.0508 16.8275 10.5008 18.1658C10.3564 18.2744 10.1806 18.3331 9.99998 18.3331C9.81931 18.3331 9.64354 18.2744 9.49915 18.1658C7.94915 16.8275 3.33331 12.4942 3.33331 8.33332C3.33331 6.56521 4.03569 4.86952 5.28593 3.61928C6.53618 2.36904 8.23187 1.66666 9.99998 1.66666C11.7681 1.66666 13.4638 2.36904 14.714 3.61928C15.9643 4.86952 16.6666 6.56521 16.6666 8.33332Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 10.8333C11.3807 10.8333 12.5 9.71406 12.5 8.33334C12.5 6.95263 11.3807 5.83334 10 5.83334C8.61929 5.83334 7.5 6.95263 7.5 8.33334C7.5 9.71406 8.61929 10.8333 10 10.8333Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span> 
+                                <a class="text">서울 성수동2가 273-10</a>
+                            </div>
+
+                            <!---운영시간-->
+                            <div>
+                                <span>
+                                    <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_0_48)">
+                                    <path d="M10 5V10L13.3333 11.6667" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 18.3333C14.6024 18.3333 18.3334 14.6024 18.3334 9.99999C18.3334 5.39762 14.6024 1.66666 10 1.66666C5.39765 1.66666 1.66669 5.39762 1.66669 9.99999C1.66669 14.6024 5.39765 18.3333 10 18.3333Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_0_48">
+                                    <rect width="20" height="20" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                                </span>
+                                <a class="text">09:00 - 19:00</a>
+                            </div>
+
+                            <!---전화번호-->
+                            <div>
+                                <span>      
+                                    <svg id="call" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.665 15.401C12.8715 15.4959 13.1042 15.5175 13.3247 15.4624C13.5452 15.4074 13.7403 15.2788 13.878 15.098L14.233 14.633C14.4193 14.3846 14.6609 14.183 14.9386 14.0442C15.2163 13.9053 15.5225 13.833 15.833 13.833H18.833C19.3634 13.833 19.8721 14.0437 20.2472 14.4188C20.6223 14.7939 20.833 15.3026 20.833 15.833V18.833C20.833 19.3634 20.6223 19.8721 20.2472 20.2472C19.8721 20.6223 19.3634 20.833 18.833 20.833C14.0591 20.833 9.48074 18.9366 6.10509 15.5609C2.72943 12.1853 0.833008 7.6069 0.833008 2.83301C0.833008 2.30257 1.04372 1.79387 1.41879 1.41879C1.79387 1.04372 2.30257 0.833008 2.83301 0.833008H5.83301C6.36344 0.833008 6.87215 1.04372 7.24722 1.41879C7.62229 1.79387 7.83301 2.30257 7.83301 2.83301V5.83301C7.83301 6.1435 7.76072 6.44972 7.62186 6.72744C7.48301 7.00515 7.2814 7.24671 7.03301 7.43301L6.56501 7.78401C6.38142 7.92419 6.25203 8.12359 6.1988 8.34836C6.14557 8.57312 6.17179 8.80938 6.27301 9.01701C7.63969 11.7929 9.88743 14.0378 12.665 15.401Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <a class="text">02-1234-5678</a>
+                            </div>
+
+                            <!---버튼모음-->
+                            <div class="btn-cluster">
+                                <button class="review-btn">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.6642 3.33334C11.9648 3.33334 12.2599 3.41467 12.5181 3.56871C12.7763 3.72275 12.988 3.94377 13.1309 4.20834L13.5359 4.95834C13.6787 5.22292 13.8904 5.44394 14.1486 5.59798C14.4068 5.75202 14.7019 5.83335 15.0025 5.83334H16.6667C17.1087 5.83334 17.5326 6.00894 17.8452 6.3215C18.1578 6.63406 18.3334 7.05798 18.3334 7.50001V15C18.3334 15.442 18.1578 15.866 17.8452 16.1785C17.5326 16.4911 17.1087 16.6667 16.6667 16.6667H3.33335C2.89133 16.6667 2.4674 16.4911 2.15484 16.1785C1.84228 15.866 1.66669 15.442 1.66669 15V7.50001C1.66669 7.05798 1.84228 6.63406 2.15484 6.3215C2.4674 6.00894 2.89133 5.83334 3.33335 5.83334H4.99752C5.29787 5.83336 5.59264 5.75221 5.85067 5.59848C6.1087 5.44475 6.32039 5.22415 6.46335 4.96001L6.87085 4.20668C7.01382 3.94253 7.22551 3.72194 7.48354 3.5682C7.74156 3.41447 8.03634 3.33333 8.33669 3.33334H11.6642Z" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 13.3333C11.3807 13.3333 12.5 12.2141 12.5 10.8333C12.5 9.45263 11.3807 8.33334 10 8.33334C8.61929 8.33334 7.5 9.45263 7.5 10.8333C7.5 12.2141 8.61929 13.3333 10 13.3333Z" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                후기 작성하기</button>
+                                <button class="like-btn">
+                                    <span class="icon-heart"></span>
+                                    <span id="like-count">128</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!---태그-->
+                    <div class="tag-container">
+                        <div><a class="subhead">태그</a></div>
+                        <div class="tag-cluster">
+                            <div class="tag">#아늑한</div>
+                            <div class="tag">#자연</div>
+                            <div class="tag">#빈티지</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!---상세정보 블록-->
+            <section class="detailpage-container">
+                <!---1.네비게이션바-->
+                <nav class="navi-bar" id="target">
+                    <ul>
+                        <li class="navi-item"><a href="15_coffeen_detailPhoto.html#target">사진<br>&nbsp;(4)</a></li>
+                        <li class="navi-item active"><a href="15_coffeen_detailReview.html#target">&nbsp;리뷰<br>(234)</a></li>
+                        <li class="navi-item"><a href="15_coffeen_detailMenu.html#target"><span>상세정보</span></a></li>
+                    </ul>
+                </nav>
+                <!---2.리뷰-->
+                <div class="box">
+                        <!--작성자 정보랑 별점-->
+                        <div class="review-top">
+                            <a class="subhead">카페러버</a>
+                            <!--별점-->
+                            <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
+                            </svg>
+                            <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
+                            </svg>
+                            <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
+                            </svg>
+                            <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
+                            </svg>
+                            <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
+                            </svg>
+                        </div>
+                    <!--날짜-->
+                    <div class="review-date"><a class="smalltxt">2025.01.15</a></div>
+                    <!--리뷰내용-->
+                    <div class="review-article"><a class="text">정말 분위기 좋고 커피도 맛있어요! 작업하기 딱 좋은 환경입니다.</a></div>
+                    <!--사진-->
+                    <div class="review-photo">
+                        <img src="../../assets/images/15_cafe2.jpeg" alt="" />
+                        <img src="../../assets/images/15_cafe3.jpeg" alt="" />
+                    </div>
+                </div>
+
+
+                <!---2.리뷰-->
+                <div class="box">
+                    <!--작성자 정보랑 별점-->
+                    <div class="review-top">
+                        <a class="subhead">브런치덕후</a>
+                        <!--별점-->
+                        <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
+                        </svg>
+                        <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
+                        </svg>
+                        <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
+                        </svg>
+                        <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
+                        </svg>
+                    </div>
+                    <!--날짜-->
+                    <div class="review-date"><a class="smalltxt">2025.01.31</a></div>
+                    <!--리뷰내용-->
+                    <div class="review-article"><a class="text">브런치 메뉴가 정말 맛있어요. 다만 주말에는 사람이 많아서 예약하고 가는게 좋을 것 같아요.</a></div>
+                    <!--사진-->
+                    <div class="review-photo">
+                        <img src="../../assets/images/15_cafe4.jpeg" alt="" />
+                    </div>
+                </div>
+            <!--------->
+        </div>
+        <script src="15_coffeen_detailPhoto.js"></script>
+    </body>
