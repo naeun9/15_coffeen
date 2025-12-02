@@ -117,7 +117,7 @@
             aria-haspopup="listbox"
             aria-expanded="false"
           >
-            <span id="sortDropdownLabel" class="sort-dropdown-label">평점순</span>
+            <span id="sortDropdownLabel" class="sort-dropdown-label">인기순</span>
             <span class="sort-dropdown-arrow" aria-hidden="true"></span>
           </button>
           <ul
@@ -126,22 +126,14 @@
             role="listbox"
             aria-labelledby="sortDropdownToggle"
           >
+            <li class="sort-option" role="option" data-value="likes">인기순</li>
             <li class="sort-option" role="option" data-value="rating">평점순</li>
-            <li class="sort-option" role="option" data-value="likes">하트순</li>
-            <li class="sort-option" role="option" data-value="distance">거리순</li>
           </ul>
           <select id="sortSelect" class="sort-select native-hidden" aria-hidden="true">
-            <option value="rating" selected>평점순</option>
-            <option value="likes">하트순</option>
-            <option value="distance">거리순</option>
+            <option value="likes">인기순</option>
+            <option value="rating">평점순</option>
           </select>
         </div>
-        <select id="sortSelect" class="sort-select native-hidden">
-          <option value="popular">인기순</option>
-          <option value="rating">평점순</option>
-          <option value="distance">거리순</option>
-          <option value="latest">최신순</option>
-        </select>
       </div>
     </section>
 

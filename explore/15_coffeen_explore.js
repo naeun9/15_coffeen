@@ -116,7 +116,7 @@ const REGIONS = ["용산구", "마포구", "성동구", "중구", "동작구"];
 let searchQuery = "";
 let selectedTags = [];
 let selectedRegions = [];
-let sortBy = "rating"; // 'rating' | 'likes' | 'distance'
+let sortBy = "likes"; // 'likes' | 'rating'
 let viewMode = "grid"; // 'masonry' | 'grid'
 let filtersOpen = true;
 
@@ -139,6 +139,7 @@ const sortSelect = document.getElementById("sortSelect");
 const sortDropdownToggle = document.getElementById("sortDropdownToggle");
 const sortDropdownList = document.getElementById("sortDropdownList");
 const sortDropdownLabel = document.getElementById("sortDropdownLabel");
+const getSortOptions = () => Array.from(sortDropdownList.children);
 const gridBtn = document.getElementById("gridBtn");
 const masonryBtn = document.getElementById("masonryBtn");
 const cafeGrid = document.getElementById("cafeGrid");
@@ -190,7 +191,7 @@ function renderFilterChips() {
     const button = document.createElement("button");
     button.className = "chip-region";
     const iconSpan = document.createElement("span");
-    iconSpan.className = "chip-region-icon";
+    iconSpan.className = "location-icon chip-region-icon";
     const labelSpan = document.createElement("span");
     labelSpan.textContent = region;
 
@@ -335,13 +336,11 @@ function handleSearchSubmit() {
 }
 
 function updateSortDropdownUI() {
-  const currentOption = Array.from(sortDropdownList.children).find(
-    (li) => li.dataset.value === sortBy
-  );
+  const currentOption = getSortOptions().find((li) => li.dataset.value === sortBy);
   if (currentOption) {
     sortDropdownLabel.textContent = currentOption.textContent;
   }
-  Array.from(sortDropdownList.children).forEach((li) => {
+  getSortOptions().forEach((li) => {
     li.classList.toggle("selected", li.dataset.value === sortBy);
   });
   sortDropdownToggle.setAttribute("aria-expanded", "false");
@@ -381,7 +380,7 @@ sortDropdownToggle.addEventListener("click", (e) => {
   sortDropdownToggle.setAttribute("aria-expanded", String(!isOpen));
 });
 
-Array.from(sortDropdownList.children).forEach((li) => {
+getSortOptions().forEach((li) => {
   li.addEventListener("click", (e) => {
     e.stopPropagation();
     setSort(li.dataset.value);
@@ -540,7 +539,7 @@ function createCafeCard(cafe) {
   const locationItem = document.createElement("div");
   locationItem.className = "meta-item";
   const pinIcon = document.createElement("span");
-  pinIcon.className = "icon-pin";
+  pinIcon.className = "location-icon icon-pin";
   pinIcon.setAttribute("aria-hidden", "true");
   pinIcon.textContent = "";
   const locationText = document.createElement("span");
@@ -636,8 +635,6 @@ async function refreshCafes() {
         return b.rating - a.rating;
       case "likes":
         return b.saves - a.saves;
-      case "distance":
-        return parseFloat(a.distance) - parseFloat(b.distance);
       default:
         return b.rating - a.rating;
     }

@@ -1,16 +1,20 @@
 // 15_coffeen_login.js
 
+const byId = (id) => document.getElementById(id);
+const parseStoredUsers = () => JSON.parse(localStorage.getItem("users")) || [];
+const matchUser = (users, id, pw) => users.find((u) => u.id === id && u.password === pw);
+
 // 로그인 이벤트
-document.getElementById("loginForm").addEventListener("submit", function (e) {
+byId("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const id = document.getElementById("login-id").value.trim();
-  const pw = document.getElementById("login-password").value;
-  const remember = document.getElementById("remember").checked;
+  const id = byId("login-id").value.trim();
+  const pw = byId("login-password").value;
+  const remember = byId("remember").checked;
 
   // localStorage 확인
-  const saved = JSON.parse(localStorage.getItem("users")) || [];
-  let user = saved.find(u => u.id === id && u.password === pw);
+  const saved = parseStoredUsers();
+  const user = matchUser(saved, id, pw);
 
   if (user) {
     loginSuccess(user, remember);
@@ -19,9 +23,9 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
   // 외부 JSON
   fetch("15_coffeen_login.json")
-    .then(res => res.json())
-    .then(data => {
-      const jsonUser = data.find(u => u.id === id && u.password === pw);
+    .then((res) => res.json())
+    .then((data) => {
+      const jsonUser = matchUser(data, id, pw);
       if (jsonUser) {
         loginSuccess(jsonUser, remember);
       } else {

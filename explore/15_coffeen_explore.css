@@ -106,7 +106,7 @@ body {
   height: 36px;
   border-radius: 12px;
   border: none;
-  background: transparent url("../assets/icons/15_icon_search.svg") center/18px 18px no-repeat;
+  background: transparent url("data:image/svg+xml,%3Csvg%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20opacity%3D%220.4%22%3E%3Cpath%20d%3D%22M15.7501%2015.7501L12.4951%2012.4951%22%20stroke%3D%22%23726A55%22%20stroke-width%3D%221.125%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M8.25%2014.25C11.5637%2014.25%2014.25%2011.5637%2014.25%208.25C14.25%204.93629%2011.5637%202.25%208.25%202.25C4.93629%202.25%202.25%204.93629%202.25%208.25C2.25%2011.5637%204.93629%2014.25%208.25%2014.25Z%22%20stroke%3D%22%23726A55%22%20stroke-width%3D%221.125%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3C/svg%3E") center/18px 18px no-repeat;
   cursor: pointer;
   transform: translateY(-50%);
 }
@@ -134,7 +134,7 @@ body {
 .filter-main-btn-icon {
   width: 20px;
   height: 20px;
-  background: url("../assets/icons/15_icon_filter.svg") center/contain no-repeat;
+  background: url("data:image/svg+xml,%3Csvg%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M7.5%203.75H2.25%22%20stroke%3D%22white%22%20stroke-width%3D%221.125%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M9%2014.25H2.25%22%20stroke%3D%22white%22%20stroke-width%3D%221.125%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M10.5%202.25V5.25%22%20stroke%3D%22white%22%20stroke-width%3D%221.125%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M12%2012.75V15.75%22%20stroke%3D%22white%22%20stroke-width%3D%221.125%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M15.75%209H9%22%20stroke%3D%22white%22%20stroke-width%3D%221.125%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M15.75%2014.25H12%22%20stroke%3D%22white%22%20stroke-width%3D%221.125%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M15.75%203.75H10.5%22%20stroke%3D%22white%22%20stroke-width%3D%221.125%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M6%207.5V10.5%22%20stroke%3D%22white%22%20stroke-width%3D%221.125%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M6%209H2.25%22%20stroke%3D%22white%22%20stroke-width%3D%221.125%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
 .filter-main-btn-text {
@@ -277,7 +277,7 @@ body {
 
 .chip-region {
   height: 42px;
-  padding: 0 18px 0 32px;
+  padding: 0 18px 0 36px;
   border-radius: 16777200px;
   background: #fffdf8;
   border: 1px solid #e5d5c1;
@@ -302,8 +302,7 @@ body {
   left: 14px;
   width: 14px;
   height: 14px;
-  background: url("../assets/icons/15_icon_location.svg") center/14px 14px
-    no-repeat;
+  transform: none;
 }
 
 /* 결과 헤더 */
@@ -357,7 +356,7 @@ body {
   align-items: center;
   gap: 8px;
   border-radius: 16px;
-  border: 2px solid rgba(229, 213, 193, 0.8);
+  border: 1px solid rgba(229, 213, 193, 0.8);
   background: #ffffff;
   padding: 10px 16px 10px 16px;
   min-width: 118px;
@@ -511,14 +510,22 @@ body {
   background: url("../assets/icons/15_icon_heart.svg") center/16px 16px no-repeat;
 }
 
+.location-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  transform: translateY(4px);
+  background: url("data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M10%202.8C7.9%202.8%206.2%204.5%206.2%206.6C6.2%207.7%206.58%208.7%207.24%209.63C7.9%2010.59%208.78%2011.44%209.54%2012.23L10%2012.7L10.46%2012.23C11.22%2011.44%2012.1%2010.59%2012.76%209.63C13.42%208.7%2013.8%207.7%2013.8%206.6C13.8%204.5%2012.1%202.8%2010%202.8Z%22%20fill%3D%22none%22%20stroke%3D%22%23AAA699%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C/path%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%226.6%22%20r%3D%221.6%22%20fill%3D%22none%22%20stroke%3D%22%23AAA699%22%20stroke-width%3D%221.3%22%3E%3C/circle%3E%3C/svg%3E") center/contain no-repeat;
+}
+
 .save-badge.active {
-  color: #b1c6b1;
+  color: #e14c4c;
   border-color: rgba(229, 213, 193, 0.6);
   background: #ffffff;
 }
 
 .save-badge.active .icon-heart {
-  background-image: url("../assets/icons/15_icon_filled_heart.svg");
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M10%2016.5C9.8%2016.5%209.62%2016.45%209.45%2016.34C7.02%2014.79%205.3%2013.18%204.2%2011.54C3.1%209.89%202.6%208.3%202.6%206.9C2.6%204.9%204.16%203.4%206.14%203.4C7.36%203.4%208.47%203.98%209.14%204.9C9.39%205.25%209.7%205.4%2010%205.4C10.3%205.4%2010.61%205.25%2010.86%204.9C11.53%203.98%2012.64%203.4%2013.86%203.4C15.84%203.4%2017.4%204.9%2017.4%206.9C17.4%208.3%2016.9%209.89%2015.8%2011.54C14.7%2013.18%2012.98%2014.79%2010.55%2016.34C10.38%2016.45%2010.2%2016.5%2010%2016.5Z%22%20fill%3D%22%23E14C4C%22%20stroke%3D%22%23E14C4C%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3C/path%3E%3C/svg%3E");
 }
 
 .cafe-info {
@@ -542,7 +549,7 @@ body {
 .meta-item {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 1px;
   font-size: 14px;
   color: rgba(114, 106, 85, 0.8);
 }
@@ -556,10 +563,9 @@ body {
 }
 
 .icon-pin {
-  width: 14px;
-  height: 18px;
-  background: url("../assets/icons/15_icon_location.svg") center/14px 18px
-    no-repeat;
+  width: 22px;
+  height: 22px;
+  transform: translateY(4px);
 }
 
 .icon-star {
@@ -577,12 +583,13 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 10px;
-  border-radius: 8px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
   background: rgba(177, 198, 177, 0.5);
-  border: 1px solid rgba(229, 213, 193, 0.5);
+  border: 1px solid rgba(177, 198, 177, 0.5);
   color: #726a55;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* 검색 결과 없음 */

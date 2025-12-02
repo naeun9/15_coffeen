@@ -44,80 +44,6 @@ button {
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: var(--card);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
-}
-
-.header-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 16px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 48px;
-}
-
-.header-logo {
-  margin-right: auto;
-}
-
-.header-logo img {
-  height: 40px;
-  width: auto;
-  border-radius: 50%;
-}
-
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.nav-item {
-  position: relative;
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-  color: var(--text-sub);
-  padding-bottom: 4px;
-}
-
-.nav-item::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  border-radius: 999px;
-  background-color: var(--primary);
-  transition: width 0.2s ease;
-}
-
-body.mypage-no-nav-anim .coffeen-header .nav-item::after {
-  transition: none;
-}
-
-.nav-item:hover {
-  color: var(--primary);
-}
-
-.nav-item:hover::after {
-  width: 100%;
-}
-
-.nav-item.is-active {
-  color: var(--primary);
-}
-
-.nav-item.is-active::after {
-  width: 100%;
-}
-
-/* Explore & MyPage: 통일된 네비게이션 효과 */
-body[data-current-page="explore"] .coffeen-header,
-body[data-current-page="mypage"] .coffeen-header {
   min-height: 80px;
   background: #fafafa;
   border-bottom: 1px solid rgba(229, 213, 193, 0.2);
@@ -125,66 +51,80 @@ body[data-current-page="mypage"] .coffeen-header {
   backdrop-filter: blur(8px);
 }
 
-body[data-current-page="explore"] .header-inner,
-body[data-current-page="mypage"] .header-inner {
+.header-inner {
   max-width: 1229px;
+  margin: 0 auto;
   padding: 12px 32px;
   height: 80px;
-}
-
-body[data-current-page="explore"] .header-logo img,
-body[data-current-page="mypage"] .header-logo img {
-  height: 56px;
-}
-
-body[data-current-page="explore"] .header-nav,
-body[data-current-page="mypage"] .header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   gap: 32px;
 }
 
-body[data-current-page="explore"] .nav-item,
-body[data-current-page="mypage"] .nav-item {
+.header-logo {
+  margin-right: auto;
+}
+
+.header-logo img {
+  height: 56px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-item {
+  position: relative;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.09px;
   line-height: 24px;
+  text-decoration: none;
   color: var(--nav-muted);
   padding: 8px 12px;
   border-radius: 12px;
   transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-body[data-current-page="explore"] .nav-item::after,
-body[data-current-page="mypage"] .nav-item::after {
+.nav-item::after {
+  content: "";
+  position: absolute;
   left: 12px;
   bottom: -6px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0) 0%,
     var(--primary) 50%,
     rgba(0, 0, 0, 0) 100%
   );
+  transition: width 0.2s ease;
 }
 
-body[data-current-page="explore"] .nav-item:hover,
-body[data-current-page="mypage"] .nav-item:hover {
-  color: var(--text-main);
+.nav-item:hover {
+  color: var(--primary);
 }
 
-body[data-current-page="explore"] .nav-item:hover::after,
-body[data-current-page="mypage"] .nav-item:hover::after {
+.nav-item:hover::after {
   width: calc(100% - 24px);
 }
 
-body[data-current-page="explore"] .nav-item.is-active,
-body[data-current-page="mypage"] .nav-item.is-active {
+.nav-item.is-active {
   color: var(--primary);
   background-color: rgba(160, 130, 109, 0.08);
   box-shadow: inset 0 -4px 12px rgba(160, 130, 109, 0.08);
 }
 
-body[data-current-page="explore"] .nav-item.is-active::after,
-body[data-current-page="mypage"] .nav-item.is-active::after {
+.nav-item.is-active::after {
   width: calc(100% - 24px);
+  transition: none;
 }
 
 @media (max-width: 1200px) {

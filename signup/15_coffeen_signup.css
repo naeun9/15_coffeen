@@ -1,8 +1,19 @@
+:root {
+  --auth-bg: #fafafa;
+  --auth-text: #726a55;
+  --auth-surface: #f5f5f5;
+  --auth-border: rgba(102, 102, 102, 0.35);
+  --auth-muted: #666666;
+  --auth-select-placeholder: #a9a399;
+  --auth-primary: #a0826d;
+  --auth-primary-hover: #8f6a53;
+}
+
 body {
   margin: 0;
-  background: #FAFAFA;
+  background: var(--auth-bg);
   font-family: "Poppins", sans-serif;
-  color: #726A55;
+  color: var(--auth-text);
 }
 
 .wrapper {
@@ -27,7 +38,7 @@ body {
 }
 
 .title-section a {
-  color: #726A55;
+  color: var(--auth-text);
   text-decoration: underline;
 }
 .title-section {
@@ -51,8 +62,8 @@ body {
   height: 48px;
   box-sizing: border-box; 
   border-radius: 12px;
-  border: 1px solid rgba(102, 102, 102, 0.35);
-  background: #F5F5F5;
+  border: 1px solid var(--auth-border);
+  background: var(--auth-surface);
   padding-left: 14px;
   font-size: 15px;
   -webkit-appearance: none;
@@ -69,11 +80,11 @@ body {
 }
 
 .signup-form select:invalid {
-  color: #a9a399; 
+  color: var(--auth-select-placeholder); 
 }
 
 .signup-form select:not(:invalid) {
-  color: #726A55;
+  color: var(--auth-text);
 }
 
 .pw-row {
@@ -100,14 +111,14 @@ body {
 .pw-ex {
   margin-top: -4px;
   font-size: 13px;
-  color: #666;
+  color: var(--auth-muted);
 }
 
 .next-btn {
   margin-top: 16px;
   height: 54px;
   border: none;
-  background: #A0826D;
+  background: var(--auth-primary);
   color: #fff;
   font-size: 18px;
   font-weight: 600;
@@ -118,5 +129,5 @@ body {
 
 .next-btn:hover,
 .next-btn:active {
-  background: #8f6a53;
+  background: var(--auth-primary-hover);
 }

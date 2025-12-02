@@ -1,15 +1,20 @@
 // 15_coffeen_signup.js
 
+const byId = (id) => document.getElementById(id);
+const getTrimmedValue = (id) => byId(id).value.trim();
+const parseStoredUsers = () => JSON.parse(localStorage.getItem("users")) || [];
+const persistUsers = (users) => localStorage.setItem("users", JSON.stringify(users));
+
 document.getElementById("signupForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const id = document.getElementById("id").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const password = document.getElementById("password").value;
-  const confirm = document.getElementById("confirm").value;
-  const profileName = document.getElementById("profileName").value.trim();
-  const preferredArea = document.getElementById("preferredArea").value;
+  const id = getTrimmedValue("id");
+  const email = getTrimmedValue("email");
+  const phone = getTrimmedValue("phone");
+  const password = byId("password").value;
+  const confirm = byId("confirm").value;
+  const profileName = getTrimmedValue("profileName");
+  const preferredArea = byId("preferredArea").value;
 
   // 비밀번호 일치 확인
   if (password !== confirm) {
@@ -25,7 +30,7 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
   }
 
   // 기존 저장 데이터 불러오기
-  const stored = JSON.parse(localStorage.getItem("users")) || [];
+  const stored = parseStoredUsers();
 
   // 아이디 중복 체크
   if (stored.find(u => u.id === id)) {
@@ -43,7 +48,7 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
   };
 
   stored.push(newUser);
-  localStorage.setItem("users", JSON.stringify(stored));
+  persistUsers(stored);
 
   alert("회원가입이 완료되었습니다!");
 
