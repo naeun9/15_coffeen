@@ -35,7 +35,7 @@ body {
   opacity: 0.6;
 }
 
-/* 🔶 Figma 스타일 필터 카드 */
+/* 스타일 필터 카드 */
 
 .filter-card {
   width: 100%;
@@ -254,7 +254,7 @@ body {
 .chip-tag {
   height: 42px;
   padding: 0 16px;
-  border-radius: 16777200px;
+  border-radius: 50px;
   background: rgba(177, 198, 177, 0.5);
   border: 1px solid rgba(177, 198, 177, 0.5);
   color: #726a55;
@@ -278,7 +278,7 @@ body {
 .chip-region {
   height: 42px;
   padding: 0 18px 0 36px;
-  border-radius: 16777200px;
+  border-radius: 50px;
   background: #fffdf8;
   border: 1px solid #e5d5c1;
   color: #726a55;
@@ -536,7 +536,7 @@ body {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #4e4738;
+  color: #726a55;
 }
 
 .cafe-meta-row {
