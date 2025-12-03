@@ -271,5 +271,34 @@
             </section>
             <!--------->
         </div>
+        <!--모달 팝업-->
+        <div id="shareModal" class="modal">
+            <div class="modal_popup">
+                <div class="modal_header">
+                    <h2 style="color: var(--text-main);">공유하기</h2>
+                    <span type="button" class="close_btn">&times;</span>
+                </div>
+
+                <div class="share-options">
+                    <button class="share-btn" id="blogShare">
+                        <div class="shareImg">
+                            <img src="/assets/images/15_blog.png" alt="블로그 아이콘">
+                        </div>
+                        네이버 블로그
+                    </button>
+                    <button class="share-btn" id="kakaoShare">
+                        <div class="shareImg">
+                            <img src="/assets/images/15_kakaotalk.png" alt="카카오톡 아이콘">
+                        </div>
+                        카카오톡
+                    </button>
+                </div>
+                <div class="copy-link-area">
+                    <input type="text" id="copyLinkInput" readonly>
+                    <button id="copyLink" class="copy-btn">링크 복사</button>
+                </div>
+            </div>
+        </div>
         <script src="15_coffeen_detailPhoto.js"></script>
     </body>
+
