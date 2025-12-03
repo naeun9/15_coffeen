@@ -252,10 +252,111 @@ body{
     justify-content: center;
     align-items: center;
 }
+/*----------모달 레이어----------*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+.modal.active {
+    display: flex;
+    cursor: pointer;
+}
+.modal_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 200px;
+}
+.modal_popup {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid var(--border);
+    width: 400px;
+    height: 400px;
+    max-width: 500px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.close_btn {
+    color: var(--text-main);
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+}
+.share-options {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin-bottom: 30px; 
+}
+.share-btn {
+    width: 150px;
+    height: 150px;
+    padding: 10px 10px;
+    background-color: #ffffff;
+    font-weight: medium;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    color: var(--text-main); 
+}
+.shareImg{
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+.share-btn img {
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    background-color: #ffffff;
+}
+.copy-link-area {
+    display: flex;
+    align-items: center;
+}
+#copyLinkInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #ffffff;
+    color: var(--text-sub);
+    cursor: text;
+    user-select: all;
+}
+.copy-btn {
+    padding: 8.5px 15px;
+    background-color: var(--primary);
+    border: 1px solid var(--border);
+    color: #ffffff;
 
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 
-
-
+    cursor: pointer;
+    white-space: nowrap;
+}
 
 /*----------------하단 넘어가는 페이지 부분-----------------*/
 .detailpage-container {
@@ -504,3 +605,4 @@ body.mypage-no-nav-anim .navi-bar a::after {
 .right-btn {
     right: 5px;  /* 화면 오른쪽에 붙게 */
 }
+
