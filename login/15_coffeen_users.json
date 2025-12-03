@@ -1,0 +1,16 @@
+[
+  {
+    "id": "test",
+    "password": "a123",
+    "name": "테스트 계정",
+    "email": "test@test.com",
+    "phone": "010-0000-0000"
+  },
+  {
+    "id": "admin",
+    "password": "a234",
+    "name": "관리자 계정",
+    "email": "admin@test.com",
+    "phone": "010-1111-1111"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "image": "../assets/images/15_cafe1.jpeg",
+    "name": "더 베이커리",
+    "location": "용산구",
+    "rating": 4.7,
+    "tags": ["#베이커리", "#감성"],
+    "saves": 1234
+  },
+  {
+    "id": 2,
+    "image": "../assets/images/15_cafe2.jpeg",
+    "name": "선샤인 테라스",
+    "location": "마포구",
+    "rating": 4.6,
+    "tags": ["#자연", "#루프탑"],
+    "saves": 1120
+  },
+  {
+    "id": 3,
+    "image": "../assets/images/15_cafe3.jpeg",
+    "name": "모노브루 라운지",
+    "location": "성동구",
+    "rating": 4.8,
+    "tags": ["#모던", "#공부"],
+    "saves": 1890
+  },
+  {
+    "id": 4,
+    "image": "../assets/images/15_cafe4.jpeg",
+    "name": "라이트웨이 커피바",
+    "location": "중구",
+    "rating": 4.6,
+    "tags": ["#빈티지", "#맛집"],
+    "saves": 980
+  },
+  {
+    "id": 5,
+    "image": "../assets/images/15_cafe5.jpeg",
+    "name": "루프탑 라운지",
+    "location": "동작구",
+    "rating": 4.9,
+    "tags": ["#루프탑", "#힐링"],
+    "saves": 1567
+  },
+  {
+    "id": 6,
+    "image": "../assets/images/15_cafe6.jpeg",
+    "name": "코지 코너",
+    "location": "용산구",
+    "rating": 4.5,
+    "tags": ["#아늑한", "#감성"],
+    "saves": 876
+  }
+]

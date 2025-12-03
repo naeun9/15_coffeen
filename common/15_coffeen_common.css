@@ -1,4 +1,5 @@
-/* 15_coffeen_중간과제/common/15_coffeen_common.css */
+/* 15_coffeen_common.css */
+
 /* 공통 레이아웃 및 헤더 스타일 */
 :root {
   --bg: #fafafa;
@@ -67,7 +68,7 @@ button {
 }
 
 .header-logo img {
-  height: 56px;
+  height: 48px;
   width: auto;
   border-radius: 50%;
 }

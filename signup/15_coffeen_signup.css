@@ -1,3 +1,5 @@
+/* 15_coffeen_signup.css */
+
 :root {
   --auth-bg: #fafafa;
   --auth-text: #726a55;
@@ -96,6 +98,9 @@ body {
 }
 
 .pw-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   flex: 1 1 0;
   min-width: 0; 
 }

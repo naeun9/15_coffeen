@@ -1,8 +1,0 @@
-[
-  {
-    "id": "admin",
-    "password": "1111",
-    "name": "관리자 계정",
-    "email": "admin@test.com"
-  }
-]

@@ -415,7 +415,7 @@ body {
 
 .sort-option {
   list-style: none;
-  padding: 10px 16px 10px 26px;
+  padding: 10px 16px;
   font-size: 18px;
   font-weight: 500; 
   color: #3c3730;
@@ -425,14 +425,6 @@ body {
 
 .sort-option:hover {
   background: #e9e5e1;
-}
-
-.sort-option.selected::before {
-  content: "✔";
-  position: absolute;
-  left: 8px;
-  color: #3c3730;
-  font-size: 18px;
 }
 
 .native-hidden {

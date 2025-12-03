@@ -1,97 +1,10 @@
-/* -----------------------------
-   0. 초기 데이터 + Web Storage
------------------------------- */
+// 15_coffeen_explore.js
 
-const initialCafes = [
-  {
-    id: 1,
-    image: "../assets/images/15_cafe1.jpeg",
-    name: "더 베이커리",
-    location: "용산구",
-    rating: 4.7,
-    reviews: 245,
-    tags: ["#베이커리", "#감성"],
-    distance: "0.5km",
-    saves: 1234,
-    category: "all",
-  },
-  {
-    id: 2,
-    image: "../assets/images/15_cafe2.jpeg",
-    name: "선샤인 테라스",
-    location: "마포구",
-    rating: 4.6,
-    reviews: 198,
-    tags: ["#자연", "#루프탑"],
-    distance: "1.1km",
-    saves: 1120,
-    category: "all",
-  },
-  {
-    id: 3,
-    image: "../assets/images/15_cafe3.jpeg",
-    name: "모노브루 라운지",
-    location: "성동구",
-    rating: 4.8,
-    reviews: 234,
-    tags: ["#모던", "#공부"],
-    distance: "2.0km",
-    saves: 1890,
-    category: "work",
-  },
-  {
-    id: 4,
-    image: "../assets/images/15_cafe4.jpeg",
-    name: "라이트웨이 커피바",
-    location: "중구",
-    rating: 4.6,
-    reviews: 189,
-    tags: ["#빈티지", "#맛집"],
-    distance: "1.8km",
-    saves: 980,
-    category: "dessert",
-  },
-  {
-    id: 5,
-    image: "../assets/images/15_cafe5.jpeg",
-    name: "루프탑 라운지",
-    location: "동작구",
-    rating: 4.9,
-    reviews: 312,
-    tags: ["#루프탑", "#힐링"],
-    distance: "3.1km",
-    saves: 1567,
-    category: "rooftop",
-  },
-  {
-    id: 6,
-    image: "../assets/images/15_cafe6.jpeg",
-    name: "코지 코너",
-    location: "용산구",
-    rating: 4.5,
-    reviews: 167,
-    tags: ["#아늑한", "#감성"],
-    distance: "0.9km",
-    saves: 876,
-    category: "quiet",
-  },
-];
-
-// Web Storage에 기본 데이터 저장 
+// Web Storage 키
 const STORAGE_KEY = "coffeen_explore_cafes";
 
-try {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  const parsed = stored ? JSON.parse(stored) : null;
-  if (!parsed || !Array.isArray(parsed) || parsed.length !== initialCafes.length) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(initialCafes));
-  }
-} catch (e) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(initialCafes));
-}
-
 /* -----------------------------
-   1. 해시태그/지역 목록
+   해시태그/지역 목록
 ------------------------------ */
 
 const HASHTAGS = [
@@ -110,18 +23,18 @@ const HASHTAGS = [
 const REGIONS = ["용산구", "마포구", "성동구", "중구", "동작구"];
 
 /* -----------------------------
-   2. 상태값 
+   상태값 
 ------------------------------ */
 
 let searchQuery = "";
 let selectedTags = [];
 let selectedRegions = [];
 let sortBy = "likes"; // 'likes' | 'rating'
-let viewMode = "grid"; // 'masonry' | 'grid'
+let viewMode = "masonry"; // 'masonry' | 'grid'
 let filtersOpen = true;
 
 /* -----------------------------
-   3. DOM 요소
+   DOM 요소
 ------------------------------ */
 
 const searchInput = document.getElementById("searchInput");
@@ -148,30 +61,56 @@ const emptyState = document.getElementById("emptyState");
 const resetBtn = document.getElementById("resetBtn");
 let masonryRaf = null;
 
+// 초기 뷰 모드 버튼/그리드 클래스 동기화
+gridBtn.classList.toggle("active", viewMode === "grid");
+masonryBtn.classList.toggle("active", viewMode === "masonry");
+cafeGrid.classList.toggle("grid-mode", viewMode === "grid");
+cafeGrid.classList.toggle("masonry-mode", viewMode === "masonry");
+
 /* -----------------------------
-   4. Fetch + JSON (데이터 불러오기)
+   Fetch + JSON (데이터 불러오기)
 ------------------------------ */
 
-function fetchCafes() {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  const cafes = stored ? JSON.parse(stored) : initialCafes;
+function normalizeCafes(list) {
+  return list.map((cafe) => ({
+    ...cafe,
+    liked: typeof cafe.liked === "boolean" ? cafe.liked : false,
+    saves: typeof cafe.saves === "number" ? cafe.saves : 0,
+  }));
+}
 
-  cafes.forEach((cafe) => {
-    if (typeof cafe.liked === "undefined") {
-      cafe.liked = false;
+async function fetchCafes() {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      const cafes = normalizeCafes(JSON.parse(stored));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cafes));
+      return cafes;
     }
-  });
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(cafes));
 
-  // data: URL을 사용해 fetch + JSON 패턴을 과제 요구조건대로 사용
-  const dataUrl =
-    "data:application/json," + encodeURIComponent(JSON.stringify(cafes));
-
-  return fetch(dataUrl).then((response) => response.json());
+    const res = await fetch("./15_coffeen_CafeList.json");
+    if (!res.ok) throw new Error(res.statusText);
+    const data = await res.json();
+    const cafes = normalizeCafes(Array.isArray(data) ? data : []);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cafes));
+    return cafes;
+  } catch (err) {
+    console.warn("카페 데이터를 불러오지 못했습니다. 기본 데이터로 대체합니다.", err);
+    // JSON과 동일한 시드가 이미 저장돼 있다면 그 값을 재사용
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      const cafes = normalizeCafes(JSON.parse(stored));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cafes));
+      return cafes;
+    }
+    // 마지막 방어선: 빈 리스트
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([]));
+    return [];
+  }
 }
 
 /* -----------------------------
-   5. 필터 chip 렌더링
+   필터 chip 렌더링
 ------------------------------ */
 
 function renderFilterChips() {
@@ -204,7 +143,7 @@ function renderFilterChips() {
 }
 
 /* -----------------------------
-   6. 태그 / 지역 토글
+   태그 / 지역 
 ------------------------------ */
 
 function toggleTag(tag, btn) {
@@ -232,13 +171,13 @@ function toggleRegion(region, btn) {
 }
 
 /* -----------------------------
-   7. 선택된 필터 UI 갱신
+   선택된 필터 UI 갱신
 ------------------------------ */
 
 function updateFilterUI() {
   const totalCount = selectedTags.length + selectedRegions.length;
 
-  // 상단 선택된 필터 바 표시 여부
+  // 상단 선택된 필터 바 
   if (totalCount === 0) {
     selectedFilterBar.classList.add("hidden");
     selectedFilterList.innerHTML = "";
@@ -287,7 +226,7 @@ function updateFilterUI() {
 }
 
 /* -----------------------------
-   8. 필터 전체 / 부분 초기화
+   필터 전체 / 부분 초기화
 ------------------------------ */
 
 function clearAllFilters() {
@@ -296,7 +235,6 @@ function clearAllFilters() {
   searchQuery = "";
   searchInput.value = "";
 
-  // 모든 chip active 제거
   Array.from(tagContainer.children).forEach((btn) =>
     btn.classList.remove("active")
   );
@@ -327,7 +265,7 @@ function clearRegionsOnly() {
 }
 
 /* -----------------------------
-   9. 검색 / 정렬 / 뷰모드 이벤트
+   검색 / 정렬 / 뷰모드 이벤트
 ------------------------------ */
 
 function handleSearchSubmit() {
@@ -463,7 +401,7 @@ clearRegionsBtn.addEventListener("click", clearRegionsOnly);
 resetBtn.addEventListener("click", clearAllFilters);
 
 /* -----------------------------
-   10. 카페 카드 생성
+   카페 카드 생성
 ------------------------------ */
 
 function persistCafeLike(id, liked) {
@@ -585,7 +523,7 @@ function createCafeCard(cafe) {
 }
 
 /* -----------------------------
-   11. 필터 적용 + 렌더링
+   필터 적용 + 렌더링
 ------------------------------ */
 
 function formatSaves(value) {
@@ -600,7 +538,7 @@ async function refreshCafes() {
   const cafes = await fetchCafes();
   let filtered = cafes.slice();
 
-  // 검색 필터 (이름 + 위치)
+  // 검색 필터 (이름, 위치)
   if (searchQuery.trim() !== "") {
     const q = searchQuery.toLowerCase();
     filtered = filtered.filter(
@@ -660,7 +598,7 @@ async function refreshCafes() {
 }
 
 /* -----------------------------
-   12. 초기 실행
+   초기 실행
 ------------------------------ */
 
 renderFilterChips();

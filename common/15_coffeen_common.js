@@ -1,4 +1,4 @@
-// 15_coffeen_중간과제/common/15_coffeen_common.js
+// 15_coffeen_common.js
 
 document.addEventListener("DOMContentLoaded", function () {
   const current = document.body.dataset.currentPage;
