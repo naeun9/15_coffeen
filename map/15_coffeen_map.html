@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../common/15_coffeen_common.css">
+    <link rel="stylesheet" href="15_coffeen_map.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body data-current-page="map">
+    <header class="coffeen-header">
+        <div class="header-inner">
+            <a href="#" class="header-logo">
+                <img src="../assets/images/15_logo.png" alt="header-logo">
+                
+            </a>
+            <nav class="header-nav">
+                <a href="../home/15_coffeen_home.html" class="nav-item" data-page="home">home</a>
+                <a href="../explore/15_coffeen_explore.html" class="nav-item" data-page="explore">explore</a>
+                <a href="../map/15_coffeen_map.html" class="nav-item" data-page="map">map</a>
+                <a href="../write/15_coffeen_write.html" class="nav-item" data-page="write">write</a>
+                <a href="../mypage/15_coffeen_board.html" class="nav-item" data-page="mypage">mypage</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="map_container">
+        <section class="map_area" id="map_view">
+            <div class="map_back">
+                <img src="../assets/images/15_map.png" alt="지도 이미지" class="map_img">
+            </div>
+            
+
+            <div class="search_bar">
+                <span class="material-symbols-outlined search_icon">search</span>
+                <input type="text" class="search_input" placeholder="지역, 카페 이름으로 검색...">
+                <button type="button" class="location_btn">
+                    <span class="material-symbols-outlined">send</span> 내 위치
+                </button>
+            </div>
+
+            <div class="map_control">
+                <button type="button" class="control_btn" aria-label="layer">
+                    <span class="material-symbols-outlined">stacks</span>
+                </button>
+                <button type="button" class="control_btn" aria-label="list">
+                    <span class="material-symbols-outlined">list</span>
+                </button>
+            </div>
+
+            
+
+            <div class="map_bottom">
+                <div class="bottom_item">
+                    <span class="material-symbols-outlined">adjust</span> 내 위치
+                </div>
+                <div class="divider">|</div>
+                <div class="bottom_item">
+                    <span class="material-symbols-outlined">location_on</span> 카페 위치
+                </div>
+            </div>
+
+            <div class="map_pin" style="top:30%; left:25%;" data-id="1">
+                <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <div class="map_pin" style="top:50%; left:40%;" data-id="2">
+                <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <div class="map_pin" style="top:60%; left:60%;" data-id="3">
+                <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <div class="map_pin" style="top:50%; left:55%;" data-id="4">
+                <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <div class="map_pin" style="top:20%; left:30%;" data-id="5">
+                <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <div class="map_pin" style="top:80%; left:50%;" data-id="6">
+                <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <div class="map_pin" style="top:50%; left:50%;" id="my_pin">
+                <span class="material-symbols-outlined">adjust</span>
+            </div>
+
+
+        </section>
+        <aside class="sidebar">
+
+            <header class="side_header">
+                <h2 class="side_title">저장한 카페 (6)</h2>
+                
+                <div class="sort_dropdown">
+                    <button type="button" class="sort_btn" id="sort">
+                        인기순 <span class="material-symbols-outlined">unfold_more</span>
+                    </button>
+                    <ul class="sort_list" id="sort_options">
+                        <li class="sort_item" data-type="popular">인기순</li>
+                        <li class="sort_item" data-type="rating">평점순</li>
+                    </ul>
+                </div>
+            </header>
+
+            <div class="cafe_list">
+                
+            </div>
+        </aside>
+    </main>
+    <script src="../common/15_coffeen_common.js"></script>
+    <script src="15_coffeen_map.js"></script>
+    
+    
+</body>
+</html>

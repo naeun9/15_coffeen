@@ -1,0 +1,59 @@
+{
+    "cafes": [
+
+    {
+        "id": 1,
+        "name": "모노브루 라운지",
+        "location": "성수동",
+        "likes": 50,
+        "rating": 3.8,
+        "tag": "#공부",
+        "image": "../assets/images/15_cafe1.jpeg"
+    },
+    {
+        "id": 2,
+        "name": "라이트웨이 커피바",
+        "location": "강남",
+        "likes": 42,
+        "rating": 4.1,
+        "tag": "#아늑한",
+        "image": "../assets/images/15_cafe2.jpeg"
+    },
+    {
+        "id": 3,
+        "name": "모던 스페이스",
+        "location": "홍대",
+        "likes": 38,
+        "rating": 4.3,
+        "tag": "#모던",
+        "image": "../assets/images/15_cafe3.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "루프탑 라운지",
+        "location": "한남동",
+        "likes": 30,
+        "rating": 4.7,
+        "tag": "#루프탑",
+        "image": "../assets/images/15_cafe4.jpeg"
+    },
+      {
+        "id": 5,
+        "name": "빈티지 하우스",
+        "location": "망원동",
+        "likes": 28,
+        "rating": 4.8,
+        "tag": "#빈티지",
+        "image": "../assets/images/15_cafe5.jpeg"
+      },
+      {
+        "id": 6,
+        "name": "브런치 클럽",
+        "location": "압구정",
+        "likes": 25,
+        "rating": 4.9,
+        "tag": "#브런치",
+        "image": "../assets/images/15_cafe6.jpeg"
+      }
+    ]
+  }
