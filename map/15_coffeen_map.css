@@ -4,6 +4,9 @@ body {
     
     color:#726A55;
 }
+html {
+    overflow-y: scroll;
+}
 
 .map_container {
     display:grid;
@@ -374,4 +377,5 @@ button:active {
         bottom:20px;
         left:20px;
     }
+
 }
