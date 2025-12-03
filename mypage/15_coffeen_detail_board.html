@@ -1,0 +1,120 @@
+<!-- 15_coffeen_중간과제/mypage/15_coffeen_detail_board.html -->
+<!-- 마이페이지 내 보드 상세 화면 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Coffeen - My Page</title>
+  <link rel="stylesheet" href="../common/15_coffeen_common.css" />
+  <link rel="stylesheet" href="15_coffeen_board.css" />
+  <link rel="stylesheet" href="15_coffeen_detail_board.css" />
+</head>
+<body data-current-page="mypage">
+  <header class="coffeen-header">
+    <div class="header-inner">
+      <a href="../home/15_coffeen_home.html" class="header-logo">
+        <img src="../assets/images/15_logo.png" alt="Coffeen 로고" />
+      </a>
+      <nav class="header-nav">
+        <a href="../home/15_coffeen_home.html" class="nav-item" data-page="home">home</a>
+        <a href="../explore/15_coffeen_explore.html" class="nav-item" data-page="explore">explore</a>
+        <a href="../map/15_coffeen_map.html" class="nav-item" data-page="map">map</a>
+        <a href="../write/15_coffeen_write.html" class="nav-item" data-page="write">write</a>
+        <a href="../mypage/15_coffeen_review.html" class="nav-item" data-page="mypage">my page</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mypage-container">
+    <section class="profile-card">
+      <div class="profile-avatar"></div>
+      <div class="profile-info">
+        <h1 class="profile-name">카페러버</h1>
+        <p class="profile-bio">커피와 카페를 사랑하는 사람</p>
+        <div class="profile-stats">
+          <div class="profile-stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">후기</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">저장</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">35</span>
+            <span class="stat-label">팔로워</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">234</span>
+            <span class="stat-label">팔로잉</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mypage-tabs">
+      <button type="button" class="tab-button" data-tab="reviews">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>내 후기</span>
+      </button>
+      <button type="button" class="tab-button" data-tab="saved">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>저장한 카페</span>
+      </button>
+      <button type="button" class="tab-button is-active" data-tab="board">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>내 보드</span>
+      </button>
+    </section>
+
+    <section class="board-detail">
+      <header class="board-detail-header">
+        <div>
+          <h2 class="board-detail-title" id="board-detail-title">데이트하기 좋은 카페</h2>
+          <span class="board-detail-count" id="board-detail-count">4개 카페</span>
+        </div>
+        <div class="board-detail-actions">
+          <button type="button" class="board-detail-btn" id="board-back-btn">보드 목록</button>
+        </div>
+      </header>
+
+      <div class="board-detail-list">
+        <article class="board-detail-card">
+          <img src="../assets/images/15_cafe1.jpeg" alt="라이트웨이 커피바" class="board-detail-thumb" />
+          <div class="board-detail-info">
+            <h3 class="board-detail-cafe-name">라이트웨이 커피바</h3>
+            <p class="board-detail-meta">중구 · 커피가 맛있는 감성 카페</p>
+          </div>
+        </article>
+
+        <article class="board-detail-card">
+          <img src="../assets/images/15_cafe2.jpeg" alt="더 베이커리" class="board-detail-thumb" />
+          <div class="board-detail-info">
+            <h3 class="board-detail-cafe-name">더 베이커리</h3>
+            <p class="board-detail-meta">용산구 · 빵이 맛있는 브런치 카페</p>
+          </div>
+        </article>
+
+        <article class="board-detail-card">
+          <img src="../assets/images/15_cafe3.jpeg" alt="루프탑 라운지" class="board-detail-thumb" />
+          <div class="board-detail-info">
+            <h3 class="board-detail-cafe-name">루프탑 라운지</h3>
+            <p class="board-detail-meta">동작구 · 야경이 예쁜 루프탑 공간</p>
+          </div>
+        </article>
+
+        <article class="board-detail-card">
+          <img src="../assets/images/15_cafe4.jpeg" alt="포근한 카페" class="board-detail-thumb" />
+          <div class="board-detail-info">
+            <h3 class="board-detail-cafe-name">포근한 카페</h3>
+            <p class="board-detail-meta">마포구 · 조용한 데이트 스폿</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="../common/15_coffeen_common.js"></script>
+  <script src="15_coffeen_detail_board.js"></script>
+</body>
+</html>

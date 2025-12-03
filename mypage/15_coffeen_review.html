@@ -7,7 +7,6 @@
   <title>Coffeen - My Page</title>
   <link rel="stylesheet" href="../common/15_coffeen_common.css" />
   <link rel="stylesheet" href="15_coffeen_review.css" />
-  <link rel="stylesheet" href="15_coffeen_collection.css" />
 </head>
 <body data-current-page="mypage">
   <header class="coffeen-header">
@@ -69,98 +68,97 @@
       </button>
     </section>
 
-    <section class="tab-panel" data-tab-panel="reviews">
-      <section class="review-list" id="reviewList">
-        <article class="cafe-card">
-          <div class="cafe-image-wrap">
-            <img
-              src="../assets/images/15_cafe4.jpeg"
-              alt="브레빌 성수"
-              class="cafe-image"
-            />
-            <button type="button" class="like-badge">
-              <img src="../assets/icons/15_icon_filled_heart.svg" alt="" class="like-icon" />
-              <span class="like-count-saved">23</span>
-            </button>
+    <!-- 내 후기 리스트 -->
+    <section class="review-list" id="reviewList">
+      <article class="cafe-card" data-review-id="1">
+        <div class="cafe-image-wrap">
+          <img
+            src="../assets/images/15_cafe4.jpeg"
+            alt="라이트웨이 커피바"
+            class="cafe-image"
+          />
+          <button type="button" class="like-badge">
+            <img src="../assets/icons/15_icon_filled_heart.svg" alt="" class="like-icon" />
+            <span class="like-count-saved">981</span>
+          </button>
+        </div>
+        <div class="cafe-content">
+          <div class="cafe-title-row">
+            <h2 class="cafe-name">라이트웨이 커피바</h2>
           </div>
-          <div class="cafe-content">
-            <div class="cafe-title-row">
-              <h2 class="cafe-name">브레빌 성수</h2>
-            </div>
-            <div class="cafe-rating">
-              <img src="../assets/icons/15_icon_star.svg" alt="" class="star-icon" />
-              <span class="rating-score">4.8</span>
-            </div>
-            <div class="cafe-meta-row">
-              <div class="cafe-location">
-                <img src="../assets/icons/15_icon_location.svg" alt="" class="location-icon" />
-                <span class="location-text">성수동</span>
-              </div>
-              <span class="cafe-date">2024.01.15</span>
-            </div>
+          <div class="cafe-rating">
+            <img src="../assets/icons/15_icon_filled_star.svg" alt="" class="star-icon" />
+            <span class="rating-score">4.6</span>
           </div>
-        </article>
+          <div class="cafe-meta-row">
+            <div class="cafe-location">
+              <img src="../assets/icons/15_icon_location.svg" alt="" class="location-icon" />
+              <span class="location-text">중구</span>
+            </div>
+            <span class="cafe-date">2025.11.29</span>
+          </div>
+        </div>
+      </article>
 
-        <article class="cafe-card">
-          <div class="cafe-image-wrap">
-            <img
-              src="../assets/images/15_cafe1.jpeg"
-              alt="파니엔테"
-              class="cafe-image"
-            />
-            <button type="button" class="like-badge">
-              <img src="../assets/icons/15_icon_filled_heart.svg" alt="" class="like-icon" />
-              <span class="like-count-saved">15</span>
-            </button>
+      <article class="cafe-card" data-review-id="2">
+        <div class="cafe-image-wrap">
+          <img
+            src="../assets/images/15_cafe1.jpeg"
+            alt="더 베이커리"
+            class="cafe-image"
+          />
+          <button type="button" class="like-badge">
+            <img src="../assets/icons/15_icon_filled_heart.svg" alt="" class="like-icon" />
+            <span class="like-count-saved">1.2k</span>
+          </button>
+        </div>
+        <div class="cafe-content">
+          <div class="cafe-title-row">
+            <h2 class="cafe-name">더 베이커리</h2>
           </div>
-          <div class="cafe-content">
-            <div class="cafe-title-row">
-              <h2 class="cafe-name">파니엔테</h2>
-            </div>
-            <div class="cafe-rating">
-              <img src="../assets/icons/15_icon_star.svg" alt="" class="star-icon" />
-              <span class="rating-score">4.6</span>
-            </div>
-            <div class="cafe-meta-row">
-              <div class="cafe-location">
-                <img src="../assets/icons/15_icon_location.svg" alt="" class="location-icon" />
-                <span class="location-text">강남</span>
-              </div>
-              <span class="cafe-date">2024.01.10</span>
-            </div>
+          <div class="cafe-rating">
+            <img src="../assets/icons/15_icon_filled_star.svg" alt="" class="star-icon" />
+            <span class="rating-score">4.7</span>
           </div>
-        </article>
+          <div class="cafe-meta-row">
+            <div class="cafe-location">
+              <img src="../assets/icons/15_icon_location.svg" alt="" class="location-icon" />
+              <span class="location-text">용산구</span>
+            </div>
+            <span class="cafe-date">2025.11.21</span>
+          </div>
+        </div>
+      </article>
 
-        <article class="cafe-card">
-          <div class="cafe-image-wrap">
-            <img
-              src="../assets/images/15_cafe5.jpeg"
-              alt="르빵홀즈"
-              class="cafe-image"
-            />
-            <button type="button" class="like-badge">
-              <img src="../assets/icons/15_icon_heart.svg" alt="" class="like-icon" />
-              <span class="like-count">31</span>
-            </button>
+      <article class="cafe-card" data-review-id="3">
+        <div class="cafe-image-wrap">
+          <img
+            src="../assets/images/15_cafe5.jpeg"
+            alt="루프탑 라운지"
+            class="cafe-image"
+          />
+          <button type="button" class="like-badge">
+            <img src="../assets/icons/15_icon_heart.svg" alt="" class="like-icon" />
+            <span class="like-count">1.6k</span>
+          </button>
+        </div>
+        <div class="cafe-content">
+          <div class="cafe-title-row">
+            <h2 class="cafe-name">루프탑 라운지</h2>
           </div>
-          <div class="cafe-content">
-            <div class="cafe-title-row">
-              <h2 class="cafe-name">르빵홀즈</h2>
-            </div>
-            <div class="cafe-rating">
-              <img src="../assets/icons/15_icon_star.svg" alt="" class="star-icon" />
-              <span class="rating-score">4.9</span>
-            </div>
-            <div class="cafe-meta-row">
-              <div class="cafe-location">
-                <img src="../assets/icons/15_icon_location.svg" alt="" class="location-icon" />
-                <span class="location-text">강남</span>
-              </div>
-              <span class="cafe-date">2024.01.05</span>
-            </div>
+          <div class="cafe-rating">
+            <img src="../assets/icons/15_icon_filled_star.svg" alt="" class="star-icon" />
+            <span class="rating-score">4.9</span>
           </div>
-        </article>
-      </section>
+          <div class="cafe-meta-row">
+            <div class="cafe-location">
+              <img src="../assets/icons/15_icon_location.svg" alt="" class="location-icon" />
+              <span class="location-text">동작구</span>
+            </div>
+            <span class="cafe-date">2025.11.15</span>
+          </div>
+        </div>
+      </article>
     </section>
 
     <section class="tab-panel tab-panel-empty" data-tab-panel="saved" hidden>

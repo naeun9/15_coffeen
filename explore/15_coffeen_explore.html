@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>카페 탐색</title>
+  <link rel="stylesheet" href="../common/15_coffeen_common.css" />
+  <link rel="stylesheet" href="15_coffeen_explore.css" />
+</head>
+<body data-current-page="explore">
+  <header class="coffeen-header">
+    <div class="header-inner">
+      <a href="../home/15_coffeen_home.html" class="header-logo">
+        <img src="../assets/images/15_logo.png" alt="Coffeen 로고" />
+      </a>
+      <nav class="header-nav">
+        <a href="../home/15_coffeen_home.html" class="nav-item" data-page="home">home</a>
+        <a href="../explore/15_coffeen_explore.html" class="nav-item" data-page="explore">explore</a>
+        <a href="../map/15_coffeen_map.html" class="nav-item" data-page="map">map</a>
+        <a href="../write/15_coffeen_write.html" class="nav-item" data-page="write">write</a>
+        <a href="../mypage/15_coffeen_review.html" class="nav-item" data-page="mypage">my page</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+
+    <!-- Header -->
+    <header class="page-header">
+      <h1 class="page-title">카페 탐색</h1>
+      <p class="page-sub">
+        다양한 카페를 발견하고 나만의 카페를 찾아보세요
+      </p>
+    </header>
+
+    <!-- 검색 + 필터 카드 -->
+    <section class="filter-card">
+
+      <!-- 상단 검색 + 필터 버튼 -->
+      <div class="filter-card-top">
+        <!-- 검색 영역 -->
+        <div class="search-wrapper">
+          <input
+            id="searchInput"
+            type="text"
+            class="search-input"
+            placeholder="지역, 카페 이름으로 검색..."
+          />
+          <button id="searchBtn" class="search-btn" type="button" aria-label="검색"></button>
+        </div>
+
+        <!-- 필터 버튼 -->
+        <button id="filterToggleBtn" class="filter-main-btn">
+          <span class="filter-main-btn-icon"></span>
+          <span class="filter-main-btn-text">필터</span>
+        </button>
+      </div>
+
+      <!-- 선택된 필터 표시 바 -->
+      <div id="selectedFilterBar" class="selected-filter-bar hidden">
+        <span class="selected-filter-label">선택됨:</span>
+        <div id="selectedFilterList" class="selected-filter-list"></div>
+        <button id="clearAllFilters" class="selected-filter-clear">
+          전체 해제
+        </button>
+      </div>
+
+      <!-- 하단 해시태그 / 지역 필터 -->
+      <div id="filterBody" class="filter-card-body">
+
+        <!-- 해시태그 -->
+        <div class="filter-section">
+          <div class="filter-section-title-row">
+            <h3 class="filter-section-title">해시태그</h3>
+            <button id="clearTagsBtn" class="sub-clear-btn hidden">
+              선택 해제
+            </button>
+          </div>
+          <div id="tagContainer" class="chip-row"></div>
+        </div>
+
+        <!-- 지역 -->
+        <div class="filter-section">
+          <div class="filter-section-title-row">
+            <h3 class="filter-section-title">지역</h3>
+            <button id="clearRegionsBtn" class="sub-clear-btn hidden">
+              선택 해제
+            </button>
+          </div>
+          <div id="regionContainer" class="chip-row"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 결과 헤더 (개수 + 뷰 모드 + 정렬) -->
+    <section class="results-header">
+      <div class="results-count">
+        <span id="resultCountText">0개의 카페</span>
+      </div>
+
+      <div class="results-controls">
+        <!-- 뷰 모드 -->
+        <div class="view-mode-switch">
+          <button id="gridBtn" class="view-mode-btn active" title="그리드">
+            ■
+          </button>
+          <button id="masonryBtn" class="view-mode-btn" title="리스트">
+            ≣
+          </button>
+        </div>
+
+        <!-- 정렬 -->
+        <div class="sort-dropdown">
+          <button
+            id="sortDropdownToggle"
+            class="sort-dropdown-btn"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            <span id="sortDropdownLabel" class="sort-dropdown-label">인기순</span>
+            <span class="sort-dropdown-arrow" aria-hidden="true"></span>
+          </button>
+          <ul
+            id="sortDropdownList"
+            class="sort-dropdown-list hidden"
+            role="listbox"
+            aria-labelledby="sortDropdownToggle"
+          >
+            <li class="sort-option" role="option" data-value="likes">인기순</li>
+            <li class="sort-option" role="option" data-value="rating">평점순</li>
+          </ul>
+          <select id="sortSelect" class="sort-select native-hidden" aria-hidden="true">
+            <option value="likes">인기순</option>
+            <option value="rating">평점순</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- 카페 카드 영역 -->
+    <main>
+      <div id="cafeGrid" class="cafe-grid masonry-mode"></div>
+
+      <!-- 검색 결과 없음 -->
+      <div id="emptyState" class="empty-state hidden">
+        <p class="empty-title">검색 결과가 없습니다</p>
+        <p class="empty-sub">다른 검색어나 필터를 시도해보세요</p>
+        <button id="resetBtn" class="reset-btn">필터 초기화</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="../common/15_coffeen_common.js"></script>
+  <script src="15_coffeen_explore.js"></script>
+</body>
+</html>

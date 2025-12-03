@@ -128,21 +128,26 @@
   margin-top: 24px;
 }
 
+/* 기본은 숨겨두고 JS가 is-visible 붙였을 때만 보이게 */
 .collection-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
 }
 
 .cafe-card {
+  display: none;
   background-color: var(--card);
   border-radius: 20px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
-  display: flex;
   flex-direction: column;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cafe-card.is-visible {
+  display: flex;
 }
 
 .cafe-card:hover {
@@ -172,7 +177,7 @@
 
 .cafe-name {
   margin: 0 0 7px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
 }
 
@@ -211,8 +216,9 @@
 }
 
 .rating-star {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
+  transform: translateY(2px);
 }
 
 .rating-score {
@@ -220,7 +226,7 @@
 }
 
 .my-map-card {
-  margin-top: 32px;
+  margin-top: 28px;
   padding: 24px 24px 20px;
   background-color: var(--card);
   border-radius: 24px;
@@ -285,10 +291,42 @@
 }
 
 .like-count-saved {
-  color: #8AA48A;
+  color: #e14c4c;
 }
 
 .like-icon {
   width: 16px;
   height: 16px;
+}
+
+.collection-pagination {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.collection-pagination button {
+  min-width: 25px;
+  height: 25px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 0px solid var(--border);
+  background-color: var(--bg);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #726A55;
+}
+
+.collection-pagination button[disabled] {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.page-number.is-active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
 }

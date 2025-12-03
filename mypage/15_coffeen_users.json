@@ -1,0 +1,38 @@
+{
+  "user": {
+    "id": "user123", 
+    "name": "카페러버",
+    "profilePicture": "profile.jpg", 
+    "bio": "커피와 카페를 사랑하는 사람",
+    "followers": 35,
+    "following": 234,
+    "reviews": [
+      {
+        "cafeId": "cafe1",
+        "rating": 4.6,
+        "content": "좋은 카페였어요!",
+        "tags": ["#빈티지", "#맛집"]
+      },
+      {
+        "cafeId": "cafe2",
+        "rating": 4.7,
+        "content": "브런치가 맛있는 카페",
+        "tags": ["#베이커리", "#감성"]
+      }
+    ],
+    "savedCafes": [
+      {
+        "cafeId": "cafe1",
+        "name": "라이트웨이 커피바",
+        "location": "중구",
+        "rating": 4.6
+      },
+      {
+        "cafeId": "cafe2",
+        "name": "더 베이커리",
+        "location": "용산구",
+        "rating": 4.7
+      }
+    ]
+  }
+}

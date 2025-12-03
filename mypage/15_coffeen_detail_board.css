@@ -1,0 +1,104 @@
+/* 15_coffeen_중간과제/mypage/15_coffeen_detail_board.css */
+/* 내 보드 상세 스타일 */
+
+.board-detail {
+  margin-top: 32px;
+}
+
+.board-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.board-detail-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.board-detail-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding: 0px 0px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-sub);
+  background-color: #FFFCF8;
+}
+
+.board-detail-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.board-detail-btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background-color: var(--card);
+  font-size: 14px;
+  font-weight: 500;
+  color: #726A55;
+  cursor: pointer;
+}
+
+.board-detail-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.board-detail-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.board-detail-card {
+  background-color: var(--card);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  padding: 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.board-detail-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
+}
+
+.board-detail-thumb {
+  width: 100%;
+  height: 160px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.board-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.board-detail-cafe-name {
+  margin: 0px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.board-detail-meta {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-sub);
+}

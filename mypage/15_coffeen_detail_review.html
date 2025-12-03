@@ -1,0 +1,159 @@
+<!-- 15_coffeen_중간과제/mypage/15_coffeen_detail_review.html -->
+<!-- 마이페이지 리뷰 상세 화면 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Coffeen - My Page</title>
+  <link rel="stylesheet" href="../common/15_coffeen_common.css" />
+  <link rel="stylesheet" href="15_coffeen_review.css" />
+  <link rel="stylesheet" href="15_coffeen_detail_review.css" />
+</head>
+<body data-current-page="mypage">
+  <header class="coffeen-header">
+    <div class="header-inner">
+      <a href="../home/15_coffeen_home.html" class="header-logo">
+        <img src="../assets/images/15_logo.png" alt="Coffeen 로고" />
+      </a>
+      <nav class="header-nav">
+        <a href="../home/15_coffeen_home.html" class="nav-item" data-page="home">home</a>
+        <a href="../explore/15_coffeen_explore.html" class="nav-item" data-page="explore">explore</a>
+        <a href="../map/15_coffeen_map.html" class="nav-item" data-page="map">map</a>
+        <a href="../write/15_coffeen_write.html" class="nav-item" data-page="write">write</a>
+        <a href="../mypage/15_coffeen_review.html" class="nav-item" data-page="mypage">my page</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mypage-container">
+    <section class="profile-card">
+      <div class="profile-avatar"></div>
+      <div class="profile-info">
+        <h1 class="profile-name">카페러버</h1>
+        <p class="profile-bio">커피와 카페를 사랑하는 사람</p>
+        <div class="profile-stats">
+          <div class="profile-stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">후기</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">저장</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">35</span>
+            <span class="stat-label">팔로워</span>
+          </div>
+          <div class="profile-stat">
+            <span class="stat-number">234</span>
+            <span class="stat-label">팔로잉</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mypage-tabs">
+      <button type="button" class="tab-button is-active" data-tab="reviews">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>내 후기</span>
+      </button>
+      <button type="button" class="tab-button" data-tab="saved">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>저장한 카페</span>
+      </button>
+      <button type="button" class="tab-button" data-tab="board">
+        <span class="tab-icon" aria-hidden="true"></span>
+        <span>내 보드</span>
+      </button>
+    </section>
+
+    <section class="detail-review-section">
+      <button type="button" class="detail-back-button" id="back-to-list">
+        <span class="detail-back-icon" aria-hidden="true">←</span>
+        <span>목록으로</span>
+      </button>
+
+      <div class="detail-hero-image-wrap">
+        <img
+          src="../assets/images/15_cafe4.jpeg"
+          alt="카페 이미지"
+          class="detail-hero-image"
+          id="detailHeroImage"
+        />
+      </div>
+
+      <article class="detail-review-card">
+        <header class="detail-header">
+          <div class="detail-title-wrap">
+            <h2 class="detail-cafe-name" id="detailTitle">브레빌 성수</h2>
+            <div class="detail-my-rating">
+              <h3 class="detail-my-rating-title">내 별점</h3>
+              <div class="detail-my-rating-stars" id="myRatingStars">
+                <button type="button" class="my-rating-star" data-value="1" aria-label="1점">
+                  <img src="../assets/icons/15_icon_star.svg" alt="" />
+                </button>
+                <button type="button" class="my-rating-star" data-value="2" aria-label="2점">
+                  <img src="../assets/icons/15_icon_star.svg" alt="" />
+                </button>
+                <button type="button" class="my-rating-star" data-value="3" aria-label="3점">
+                  <img src="../assets/icons/15_icon_star.svg" alt="" />
+                </button>
+                <button type="button" class="my-rating-star" data-value="4" aria-label="4점">
+                  <img src="../assets/icons/15_icon_star.svg" alt="" />
+                </button>
+                <button type="button" class="my-rating-star" data-value="5" aria-label="5점">
+                  <img src="../assets/icons/15_icon_star.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-meta-right">
+            <span class="detail-date" id="detailDate">2024.01.15</span>
+            <button type="button" class="detail-edit-button" id="detailEditToggle">수정</button>
+          </div>
+        </header>
+
+        <div class="detail-meta-row">
+          <div class="detail-location">
+            <img src="../assets/icons/15_icon_location.svg" alt="" class="location-icon" />
+            <span class="location-text" id="detailLocation">
+              성수동 · 서울 성동구 어딘가로 37길 17
+            </span>
+          </div>
+        </div>
+
+        <section class="detail-body">
+          <p class="detail-text" id="detailContent">
+            문단1
+          </p>
+        </section>
+
+        <!-- 내 리뷰 해시태그 -->
+        <section class="detail-tags-section">
+          <div class="detail-tag-list" id="detailTagList"></div>
+          <div class="detail-tag-edit-panel" id="detailTagEditPanel">
+            <p class="detail-tag-edit-label">해시태그 선택</p>
+            <div class="detail-tag-edit-list" id="detailTagEditList"></div>
+          </div>
+        </section>
+
+        <!-- 카페 정보 -->
+        <section class="detail-info-box">
+          <div class="detail-info-row">
+            <span class="detail-info-label">영업시간</span>
+            <span class="detail-info-value" id="detailHours">매일 10:00 - 22:00</span>
+          </div>
+          <div class="detail-info-row">
+            <span class="detail-info-label">전화번호</span>
+            <span class="detail-info-value" id="detailPhone">02-123-5678</span>
+          </div>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <script src="../common/15_coffeen_common.js"></script>
+  <script src="15_coffeen_detail_review.js"></script>
+</body>
+</html>

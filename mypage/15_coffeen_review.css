@@ -135,6 +135,7 @@
 }
 
 .cafe-card {
+  margin-top: 24px;
   background-color: var(--card);
   border-radius: 20px;
   border: 1px solid var(--border);
@@ -190,7 +191,7 @@
 }
 
 .like-count-saved {
-  color: #8AA48A;
+  color: #e14c4c;
 }
 
 .like-count{
@@ -210,12 +211,12 @@
 
 .cafe-name {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .cafe-rating {
-  margin-top: -15px;
+  margin-top: 5px;
   display: flex;
   align-items: center;
   gap: 4px;
