@@ -55,8 +55,8 @@ button:active {
 .map_pin {
     position:absolute;
     transform:translate(-50%, -100%);
-    color:#A0826D;
-    font-size:50px;
+    color:#996600;
+    
     font-weight:bold;
     cursor:pointer;
     z-index:5;
@@ -64,6 +64,14 @@ button:active {
 .map_pin.active {
     color:red;
     animation: bounce 0.5s infinite alternate;
+}
+.pin_img {
+    width: 48px;   
+    height: auto;  
+    display: block;
+    
+    
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
 }
 @keyframes bounce {
     0% {
@@ -379,3 +387,4 @@ button:active {
     }
 
 }
+
