@@ -1,10 +1,11 @@
 /* 15_coffeen_중간과제/mypage/15_coffeen_detail_board.css */
-/* 내 보드 상세 스타일 */
+/* 내 보드 상세 + 편집모드 스타일 */
 
 .board-detail {
   margin-top: 32px;
 }
 
+/* 헤더 영역 */
 .board-detail-header {
   display: flex;
   justify-content: space-between;
@@ -14,12 +15,46 @@
   border-bottom: 1px solid var(--border);
 }
 
+/* 보드 제목(일반 상태) */
 .board-detail-title {
   margin: 0;
   font-size: 24px;
   font-weight: 700;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    padding 0.15s ease,
+    box-shadow 0.15s ease,
+    border-radius 0.15s ease;
 }
 
+/* 편집 시 사용하는 인풋 */
+.board-detail-title-input {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: #fffcf8;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  outline: none;
+}
+
+.board-detail-title-input:focus {
+  border-color: var(--primary);
+}
+
+/* 혹시 JS에서 .is-editing 클래스를 제목에 붙였을 때를 위한 여분 */
+.board-detail-title.is-editing {
+  padding: 2px 6px;
+  border-radius: 8px;
+  background-color: #fffcf8;
+  border: 1px solid var(--border);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* 카페 개수 텍스트 */
 .board-detail-count {
   display: inline-flex;
   align-items: center;
@@ -30,14 +65,16 @@
   font-size: 16px;
   font-weight: 400;
   color: var(--text-sub);
-  background-color: #FFFCF8;
+  background-color: #fffcf8;
 }
 
+/* 오른쪽 버튼 영역 */
 .board-detail-actions {
   display: flex;
   gap: 8px;
 }
 
+/* 공통 버튼 스타일 */
 .board-detail-btn {
   padding: 8px 16px;
   border-radius: 999px;
@@ -45,22 +82,54 @@
   background-color: var(--card);
   font-size: 14px;
   font-weight: 500;
-  color: #726A55;
+  color: #726a55;
   cursor: pointer;
+  transition:
+    background-color 0.12s ease,
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
 }
 
 .board-detail-btn:hover {
   background-color: #f0f0f0;
 }
 
+/* 카페 추가 버튼(아이디/클래스 둘 다 대응) */
+.board-detail-add-btn,
+#board-add-cafe-btn {
+  opacity: 0;
+  transform: translateY(-4px) scale(0.96);
+  pointer-events: none;
+  color: #ffffff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* 편집 모드일 때 추가 버튼 뿅 나타나는 느낌 */
+.board-detail.is-editing .board-detail-add-btn,
+.board-detail.is-editing #board-add-cafe-btn {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  animation: boardAddPop 0.22s ease-out;
+}
+
+.board-detail.is-editing .board-detail-add-btn:hover,
+.board-detail.is-editing #board-add-cafe-btn:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* 카드 리스트: 항상 3열 유지 (카드가 3개 미만이어도 비율 유지) */
 .board-detail-list {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 
+/* 개별 카페 카드 */
 .board-detail-card {
+  position: relative;
   background-color: var(--card);
   border-radius: 20px;
   border: 1px solid var(--border);
@@ -78,6 +147,7 @@
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
 }
 
+/* 썸네일 이미지 */
 .board-detail-thumb {
   width: 100%;
   height: 160px;
@@ -85,6 +155,7 @@
   object-fit: cover;
 }
 
+/* 텍스트 정보 */
 .board-detail-info {
   display: flex;
   flex-direction: column;
@@ -101,4 +172,58 @@
   margin: 0;
   font-size: 13px;
   color: var(--text-sub);
+}
+
+/* 카드 삭제 X 버튼
+   - JS: .board-detail-card-remove 사용
+   - 혹시 기존 클래스 .board-detail-delete-btn도 함께 대응 */
+.board-detail-card-remove,
+.board-detail-delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background-color: #e14c4ccb;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.board-detail-card-remove:hover,
+.board-detail-delete-btn:hover {
+  background-color: #e14c4cf6;
+}
+
+/* 편집 모드일 때만 삭제 버튼 보이기 */
+.board-detail.is-editing .board-detail-card-remove,
+.board-detail.is-editing .board-detail-delete-btn {
+  opacity: 5;
+  pointer-events: auto;
+}
+
+/* 추가 버튼 팝 애니메이션 */
+@keyframes boardAddPop {
+  0% {
+    transform: translateY(6px) scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-2px) scale(1.04);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }

@@ -74,44 +74,109 @@
           <span class="board-detail-count" id="board-detail-count">4개 카페</span>
         </div>
         <div class="board-detail-actions">
+          <button
+            type="button"
+            class="board-detail-btn board-detail-add-btn"
+            id="board-add-cafe-btn"
+          >
+            카페 추가
+          </button>
+          <button type="button" class="board-detail-btn" id="board-edit-toggle">편집</button>
           <button type="button" class="board-detail-btn" id="board-back-btn">보드 목록</button>
         </div>
       </header>
 
       <div class="board-detail-list">
-        <article class="board-detail-card">
-          <img src="../assets/images/15_cafe1.jpeg" alt="라이트웨이 커피바" class="board-detail-thumb" />
-          <div class="board-detail-info">
-            <h3 class="board-detail-cafe-name">라이트웨이 커피바</h3>
-            <p class="board-detail-meta">중구 · 커피가 맛있는 감성 카페</p>
-          </div>
-        </article>
-
-        <article class="board-detail-card">
-          <img src="../assets/images/15_cafe2.jpeg" alt="더 베이커리" class="board-detail-thumb" />
-          <div class="board-detail-info">
-            <h3 class="board-detail-cafe-name">더 베이커리</h3>
-            <p class="board-detail-meta">용산구 · 빵이 맛있는 브런치 카페</p>
-          </div>
-        </article>
-
-        <article class="board-detail-card">
-          <img src="../assets/images/15_cafe3.jpeg" alt="루프탑 라운지" class="board-detail-thumb" />
-          <div class="board-detail-info">
-            <h3 class="board-detail-cafe-name">루프탑 라운지</h3>
-            <p class="board-detail-meta">동작구 · 야경이 예쁜 루프탑 공간</p>
-          </div>
-        </article>
-
-        <article class="board-detail-card">
-          <img src="../assets/images/15_cafe4.jpeg" alt="포근한 카페" class="board-detail-thumb" />
-          <div class="board-detail-info">
-            <h3 class="board-detail-cafe-name">포근한 카페</h3>
-            <p class="board-detail-meta">마포구 · 조용한 데이트 스폿</p>
-          </div>
-        </article>
+        <!-- JS에서 렌더링 -->
       </div>
     </section>
+    <!-- 보드에 카페 추가 팝업 -->
+    <div class="popup-overlay" id="detail-board-popup-overlay">
+      <div class="popup-container">
+        <header class="popup-header">
+          <h2 class="popup-title">보드에 카페 추가</h2>
+          <button type="button" class="popup-close" id="detail-popup-close" aria-label="닫기">✕</button>
+        </header>
+
+        <section class="popup-body">
+          <div class="popup-field popup-field-list">
+            <div class="popup-list-header">
+              <span class="popup-label">추가할 카페 선택</span>
+              <span class="popup-selected-count" id="detail-popup-selected-count">0개 선택됨</span>
+            </div>
+
+            <ul class="popup-cafe-list" id="detail-popup-cafe-list">
+              <li class="popup-cafe-item">
+                <label class="popup-cafe-row">
+                  <input type="checkbox" class="popup-cafe-checkbox" />
+                  <div class="popup-cafe-card">
+                    <img src="../assets/images/15_cafe1.jpeg" alt="더 베이커리" class="popup-cafe-thumb" />
+                    <div class="popup-cafe-info">
+                      <p class="popup-cafe-name">더 베이커리</p>
+                      <p class="popup-cafe-address">용산구 · 브런치가 맛있는 감성 카페</p>
+                    </div>
+                  </div>
+                </label>
+              </li>
+              <li class="popup-cafe-item">
+                <label class="popup-cafe-row">
+                  <input type="checkbox" class="popup-cafe-checkbox" />
+                  <div class="popup-cafe-card">
+                    <img src="../assets/images/15_cafe2.jpeg" alt="선샤인 테라스" class="popup-cafe-thumb" />
+                    <div class="popup-cafe-info">
+                      <p class="popup-cafe-name">선샤인 테라스</p>
+                      <p class="popup-cafe-address">마포구 · 햇살 좋은 우드톤 카페</p>
+                    </div>
+                  </div>
+                </label>
+              </li>
+              <li class="popup-cafe-item">
+                <label class="popup-cafe-row">
+                  <input type="checkbox" class="popup-cafe-checkbox" />
+                  <div class="popup-cafe-card">
+                    <img src="../assets/images/15_cafe3.jpeg" alt="모노브루 라운지" class="popup-cafe-thumb" />
+                    <div class="popup-cafe-info">
+                      <p class="popup-cafe-name">모노브루 라운지</p>
+                      <p class="popup-cafe-address">성동구 · 커피가 맛있는 조용한 카페</p>
+                    </div>
+                  </div>
+                </label>
+              </li>
+              <li class="popup-cafe-item">
+                <label class="popup-cafe-row">
+                  <input type="checkbox" class="popup-cafe-checkbox" />
+                  <div class="popup-cafe-card">
+                    <img src="../assets/images/15_cafe4.jpeg" alt="라이트웨이 커피바" class="popup-cafe-thumb" />
+                    <div class="popup-cafe-info">
+                      <p class="popup-cafe-name">라이트웨이 커피바</p>
+                      <p class="popup-cafe-address">중구 · 주황색 인테리어의 트렌디한 카페</p>
+                    </div>
+                  </div>
+                </label>
+              </li>
+              <li class="popup-cafe-item">
+                <label class="popup-cafe-row">
+                  <input type="checkbox" class="popup-cafe-checkbox" />
+                  <div class="popup-cafe-card">
+                    <img src="../assets/images/15_cafe6.jpeg" alt="코지 코너" class="popup-cafe-thumb" />
+                    <div class="popup-cafe-info">
+                      <p class="popup-cafe-name">코지 코너</p>
+                      <p class="popup-cafe-address">용산구 · 다양한 종류의 베이커리가 있는 카페</p>
+                    </div>
+                  </div>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <footer class="popup-footer">
+          <button type="button" class="popup-btn popup-btn-cancel" id="detail-popup-cancel">취소</button>
+          <button type="button" class="popup-btn popup-btn-primary" id="detail-popup-add">추가하기</button>
+        </footer>
+      </div>
+    </div>
+
   </main>
 
   <script src="../common/15_coffeen_common.js"></script>

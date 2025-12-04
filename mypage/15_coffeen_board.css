@@ -175,7 +175,11 @@
   color: #ffffff;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.12s ease, background-color 0.12s ease;
+  transition:
+    opacity 0.15s ease,
+    background-color 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .board-delete-btn:hover {
@@ -514,4 +518,17 @@
 
 .popup-btn-primary:hover {
   background-color: #8f6b3d;
+}
+
+/* 내 보드 스타일 중 이미지 placeholder */
+
+.board-image-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #e0dfd5;
+}
+
+.board-sub-images .board-image-placeholder {
+  height: 80px;
 }
