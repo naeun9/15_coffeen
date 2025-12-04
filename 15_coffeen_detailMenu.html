@@ -1,3 +1,4 @@
+<!--15_coffen_deatileMenu.html-->
 <!DOCTYPE html>
 
 <html>
@@ -38,30 +39,23 @@
         </nav>
         <!--------->
 
-        <!-------메뉴바 아래 공통 컨테이너(정보)------->
+        <!-------메뉴바 아래 컨테이너------->
         <div class="top-container">
-
             <!---정보 블록-->
             <div class="detail-container">
                 <!---사진모음-->
                 <section class="photos-container">
-                    <div class="main-photo">
-                        <img src="../../assets/images/15_cafe1.jpeg" alt="" />
-                    </div>
-                    <div class="sub-photo">
-                        <img class="content" src="../../assets/images/15_cafe1.jpeg" alt="">
-                        <img class="content" src="../../assets/images/15_cafe1.jpeg" alt="">
-                        <img class="content" src="../../assets/images/15_cafe1.jpeg" alt="">
-                    </div>
+                    <div class="main-photo" id="mainImage"></div>
+                    <div class="sub-photo" id="subImage"></div>
                 </section>
                 <!---정보모음-->
                 <section class="info-container">
                     <!---정보-->
                     <div class="info">
                         <div class="top-inner">
-                            <a id="cafe-name">오트 성수</a>
-                            <button class="share">
-                                <!---공유 모양-->
+                            <a id="cafe-name"></a>
+                            <button id="openShareModal" class="share">
+                                <!---공유 버튼 svg-->
                                 <svg width="20" height="20" viewBox="0 0 20 20">
                                 <circle cx="15" cy="4.1667" r="2.5" fill="currentColor" stroke="#A0826D" stroke-width="1.666"/>
                                 <circle cx="5" cy="10" r="2.5" fill="currentColor" stroke="#A0826D" stroke-width="1.666"/>
@@ -69,16 +63,13 @@
                                 <path d="M7.15833 11.2583L12.85 14.575" stroke="#A0826D" stroke-width="1.666" stroke-linecap="round"/>
                                 <path d="M12.8417 5.425L7.15833 8.74167" stroke="#A0826D" stroke-width="1.666" stroke-linecap="round"/>
                                 </svg>
+                                <!---공유 버튼 svg-->
                             </button>
                         </div>
                         <div class="rate"> 
-                            <!-- 15_coffeen_중간과제/assets/icons/15_icon_star.svg -->
-                            <!-- 별점 아이콘 -->
-                            <svg id="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
-                            </svg>
-                            <a class="text">4.8</a>
-                            <a class="smalltxt">(234 리뷰)</a>
+                            <span class="icon-star"></span>
+                            <a class="text" id="rating"></a>
+                            <a class="smalltxt" id="reviews"></a>
                         </div>
                         <div class="middle">
                             <!---주소-->
@@ -89,7 +80,7 @@
                                     <path d="M10 10.8333C11.3807 10.8333 12.5 9.71406 12.5 8.33334C12.5 6.95263 11.3807 5.83334 10 5.83334C8.61929 5.83334 7.5 6.95263 7.5 8.33334C7.5 9.71406 8.61929 10.8333 10 10.8333Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span> 
-                                <a class="text">서울 성수동2가 273-10</a>
+                                <a class="text" id="location"></a>
                             </div>
 
                             <!---운영시간-->
@@ -107,7 +98,7 @@
                                     </defs>
                                     </svg>
                                 </span>
-                                <a class="text">09:00 - 19:00</a>
+                                <a class="text" id="hours"></a>
                             </div>
 
                             <!---전화번호-->
@@ -124,7 +115,7 @@
                                     </defs>
                                     </svg>
                                 </span>
-                                <a class="text">02-1234-5678</a>
+                                <a class="text" id="tel"></a>
                             </div>
 
                             <!---버튼모음-->
@@ -137,8 +128,8 @@
                                 후기 작성하기</button>
                                 <button class="like-btn">
                                     <span class="icon-heart"></span>
-                                    <span id="like-count">128</span>
-                                </button>
+                                    <span id="like-count"></span>
+                            </button>
                             </div>
                         </div>
 
@@ -146,13 +137,7 @@
                     <!---태그-->
                     <div class="tag-container">
                         <div><a class="subhead">태그</a></div>
-                        <div class="tag-cluster">
-                            <div class="tag">#아늑한</div>
-                            <div class="tag">#자연</div>
-                            <div class="tag">#빈티지</div>
-                            <div class="tag">#감성</div>
-                            <div class="tag">#맛집</div>
-                            <div class="tag">#베이커리</div>
+                        <div class="tag-cluster" id="tag-cluster-container">
                         </div>
                     </div>
                 </section>
@@ -162,115 +147,28 @@
                 <!---1.네비게이션바-->
                 <nav class="navi-bar" id="target">
                     <ul>
-                        <li class="navi-item"><a href="15_coffeen_detailPhoto.html#target">사진<br>&nbsp;(4)</a></li>
-                        <li class="navi-item"><a href="15_coffeen_detailReview.html#target">&nbsp;리뷰<br>(234)</a></li>
-                        <li class="navi-item active"><a href="15_coffeen_detailMenu.html#target"><span>상세정보</span></a></li>
+                        <li class="navi-item has-count"><a href="15_coffeen_detailPhoto.html#target">사진<div id="photo-count"></div></a></li>
+                        <li class="navi-item has-count"><a href="15_coffeen_detailReview.html#target">리뷰<div id="review-count"></div></a></li>
+                        <li class="navi-item has-ncount active"><a href="15_coffeen_detailMenu.html#target"><span>상세정보</span></a></li>
                     </ul>
                 </nav>
                 <!---2.소개-->
                 <div class="intro">
                     <div><a class="subhead">소개</a></div>
-                    <div><a class="text">햇살 가득한 창가에서의 여유로운 식사와 음료를 즐겨보세요.</a></div>
+                    <div id="introduce"></div>
                 </div>
 
                 <!---3.메뉴-->
                 <div class="menu">
                     <div><a class="subhead">메뉴</a></div>
-                    <div class="menu-cluster">
-                        <!---아메리카노 칩-->
-                        <div class="menu-chip">
-                            <div class="text">
-                                <!---머그컵 svg-->
-                                <span>
-                                    <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_0_131)">
-                                    <path d="M8.33334 1.66663V3.33329" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M11.6667 1.66663V3.33329" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M13.3333 6.66663C13.5543 6.66663 13.7663 6.75442 13.9226 6.9107C14.0789 7.06698 14.1667 7.27895 14.1667 7.49996V14.1666C14.1667 15.0507 13.8155 15.8985 13.1904 16.5236C12.5652 17.1488 11.7174 17.5 10.8333 17.5H5.83333C4.94928 17.5 4.10143 17.1488 3.47631 16.5236C2.85119 15.8985 2.5 15.0507 2.5 14.1666V7.49996C2.5 7.27895 2.5878 7.06698 2.74408 6.9107C2.90036 6.75442 3.11232 6.66663 3.33333 6.66663H15C15.8841 6.66663 16.7319 7.01782 17.357 7.64294C17.9821 8.26806 18.3333 9.1159 18.3333 9.99996C18.3333 10.884 17.9821 11.7319 17.357 12.357C16.7319 12.9821 15.8841 13.3333 15 13.3333H14.1667" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5 1.66663V3.33329" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </g>
-                                    <defs>
-                                    <clipPath id="clip0_0_131">
-                                    <rect width="20" height="20" fill="white"/>
-                                    </clipPath>
-                                    </defs>
-                                    </svg>
-                                </span>
-                                <a>아메리카노</a>
-                            </div>
-                            <div class="text">4,500원</div>
-                        </div>
-
-                        <!---카페라떼 칩-->
-                        <div class="menu-chip">
-                            <div class="text">
-                                <!---우유병 svg-->
-                                <span>
-                                    <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.66669 1.66663H13.3334" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M7.49998 1.66663V3.99079C7.49996 4.64895 7.30511 5.29237 6.93998 5.83996L6.39331 6.65996C6.02803 7.20778 5.83317 7.85152 5.83331 8.50996V16.6666C5.83331 17.1087 6.00891 17.5326 6.32147 17.8451C6.63403 18.1577 7.05795 18.3333 7.49998 18.3333H12.5C12.942 18.3333 13.3659 18.1577 13.6785 17.8451C13.9911 17.5326 14.1666 17.1087 14.1666 16.6666V8.50913C14.1666 7.85097 13.9718 7.20755 13.6066 6.65996L13.06 5.83996C12.6947 5.29214 12.4998 4.6484 12.5 3.98996V1.66663" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.83331 12.5C6.49312 12.2237 7.20131 12.0814 7.91665 12.0814C8.63198 12.0814 9.34017 12.2237 9.99998 12.5C10.6598 12.7765 11.368 12.9188 12.0833 12.9188C12.7987 12.9188 13.5069 12.7765 14.1666 12.5" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                                <a>카페라떼</a>
-                            </div>
-                            <div class="text">5,000원</div>
-                        </div>
-
-                        <!---레몬에이드 칩-->
-                        <div class="menu-chip">
-                            <div class="text">
-                                <!---물잔 svg-->
-                                <span>
-                                    <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4.26333 3.42C4.25119 3.30393 4.26357 3.1866 4.29966 3.07562C4.33576 2.96463 4.39476 2.86247 4.47284 2.77574C4.55093 2.68901 4.64637 2.61965 4.75297 2.57215C4.85957 2.52465 4.97496 2.50007 5.09166 2.5H14.9083C15.0251 2.50006 15.1406 2.52466 15.2472 2.57221C15.3539 2.61976 15.4494 2.68919 15.5275 2.77602C15.6056 2.86284 15.6646 2.96511 15.7006 3.07619C15.7366 3.18728 15.7489 3.3047 15.7367 3.42083L14.325 16.8417C14.2818 17.2513 14.0884 17.6304 13.7821 17.9058C13.4759 18.1812 13.0785 18.3336 12.6667 18.3333H7.33333C6.92002 18.3356 6.5206 18.1842 6.21261 17.9086C5.90463 17.633 5.71006 17.2527 5.66666 16.8417L4.26333 3.42Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5 9.99996C5.72123 9.45903 6.59846 9.16663 7.5 9.16663C8.40154 9.16663 9.27877 9.45903 10 9.99996C10.7212 10.5409 11.5985 10.8333 12.5 10.8333C13.4015 10.8333 14.2788 10.5409 15 9.99996" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </span>
-                                <a>레몬에이드</a>
-                            </div>
-                            <div class="text">6,000원</div>
-                        </div>
-
-                        <!---케이크 칩-->
-                        <div class="menu-chip">
-                            <div class="text">
-                                <!---쇼트케이크 svg-->
-                                <span>
-                                    <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13.3333 10.8334H2.5" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M13.3333 14.1666H2.5" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M6 6.58339L3.17667 8.66672C2.9667 8.82175 2.79608 9.02393 2.67855 9.25697C2.56102 9.49001 2.49986 9.74739 2.5 10.0084V16.6667C2.5 16.8877 2.5878 17.0997 2.74408 17.256C2.90036 17.4123 3.11232 17.5001 3.33333 17.5001H16.6667C16.8877 17.5001 17.0996 17.4123 17.2559 17.256C17.4122 17.0997 17.5 16.8877 17.5 16.6667V9.45505C17.5 7.78839 15.4667 4.43339 12.1333 2.76672C11.9944 2.68717 11.8354 2.64935 11.6755 2.65777C11.5156 2.66619 11.3615 2.72051 11.2317 2.81422L8.66667 4.66672" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M7.49998 7.49996C8.42045 7.49996 9.16665 6.75377 9.16665 5.83329C9.16665 4.91282 8.42045 4.16663 7.49998 4.16663C6.57951 4.16663 5.83331 4.91282 5.83331 5.83329C5.83331 6.75377 6.57951 7.49996 7.49998 7.49996Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    </span>
-                                <a>딸기 생크림 케이크</a>
-                            </div>
-                            <div class="text">8,000원</div>
-                        </div>
-
-                        <!---브런치 칩-->
-                        <div class="menu-chip">
-                            <div class="text">
-                                <!---수저 svg-->
-                                <span>
-                                    <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2.5 1.66663V7.49996C2.5 8.41663 3.25 9.16663 4.16667 9.16663H7.5C7.94203 9.16663 8.36595 8.99103 8.67851 8.67847C8.99107 8.36591 9.16667 7.94199 9.16667 7.49996V1.66663" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5.83334 1.66663V18.3333" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M17.5 12.5V1.66663C16.3949 1.66663 15.3351 2.10561 14.5537 2.88701C13.7723 3.66842 13.3333 4.72822 13.3333 5.83329V10.8333C13.3333 11.75 14.0833 12.5 15 12.5H17.5ZM17.5 12.5V18.3333" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    </span>
-                                <a>브런치 세트</a>
-                            </div>
-                            <div class="text">15,000원</div>
-                        </div>
-
+                    <div class="menu-cluster" id="menu-cluster-container">
                     </div>
                 </div>
 
             </section>
             <!--------->
         </div>
+        
         <!--모달 팝업-->
         <div id="shareModal" class="modal">
             <div class="modal_popup">
@@ -299,6 +197,5 @@
                 </div>
             </div>
         </div>
-        <script src="15_coffeen_detailPhoto.js"></script>
+        <script src="15_coffeen_detail.js"></script>
     </body>
-
