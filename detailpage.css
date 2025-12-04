@@ -629,3 +629,41 @@ body{
     cursor: pointer;
     white-space: nowrap;
 }
+/*---------------반응형-------------*/
+@media (max-width: 950px) {
+
+    .top-container > .detail-container {
+        order: 1;
+    }
+    .top-container > .detailpage-container {
+        order: 2;
+        width: 100%; 
+        padding: 0 40px; 
+        margin: 0 16px;
+        box-sizing: border-box;
+    }
+    .detail-container {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 16px;
+        height: auto; 
+        min-height: auto; 
+    }
+    .detail-container .photos-container,
+    .detail-container .info-container {
+        width: 100%; 
+        margin-bottom: 20px;
+    }
+
+    .info-container .info {
+        padding: 16px; 
+    }
+    .photos-container {
+        height: auto; 
+        flex-shrink: 1;
+    }
+    .main-photo,
+    .sub-photo {
+        height: auto; 
+    }
+}
