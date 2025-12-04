@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <img src="../assets/icons/15_icon_location.svg" alt="위치" class="where_icon_1"> 
                             ${cafe.location} • 
                             <img src="../assets/icons/15_icon_heart.svg" alt="하트" class="where_icon heart"> 
-                            ${cafe.likes}
+                            <span class="like_text">${cafe.likes}</span>
                         </p>
                         <div class="rating_tag">
                             <img src="../assets/icons/15_icon_star.svg" alt="별점" class="rating">
@@ -211,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 카드와 핀 클릭 이벤트 연결
     
     function bindCardAndPinEvents() {
+        /*
         const cards = document.querySelectorAll('.cafe_card');
         const pins = document.querySelectorAll('.map_pin');
 
@@ -249,6 +250,70 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (targetPin) {
                     targetPin.classList.add('active');
+                }
+            });
+        });*/
+        const cards = document.querySelectorAll('.cafe_card');
+        const pins = document.querySelectorAll('.map_pin');
+        //const popup = document.getElementById('map_popup');
+        
+        
+        const PIN_BROWN = "../assets/icons/15_pin_brown.svg"; 
+        const PIN_RED = "../assets/icons/15_pin_red.svg";     
+
+        //핀 클릭
+        pins.forEach(pin => {
+            const newPin = pin.cloneNode(true);
+            pin.parentNode.replaceChild(newPin, pin);
+
+            newPin.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+
+                
+                document.querySelectorAll('.map_pin img').forEach(img => {
+                    img.src = PIN_BROWN; // 갈색으로
+                    img.parentElement.classList.remove('active');
+                });
+                cards.forEach(c => c.classList.remove('selected'));
+
+                
+                const pinImg = newPin.querySelector('img');
+                pinImg.src = PIN_RED; // 빨간색 이미지
+                
+                newPin.classList.add('active');
+                
+                
+                const pinId = newPin.getAttribute('data-id');
+                const targetCard = document.querySelector(`.cafe_card[data-id="${pinId}"]`);
+
+                if (targetCard) {
+                    targetCard.classList.add('selected');
+                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        });
+
+        
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                
+                document.querySelectorAll('.map_pin img').forEach(img => {
+                    img.src = PIN_BROWN;
+                    img.parentElement.classList.remove('active');
+                });
+                cards.forEach(c => c.classList.remove('selected'));
+
+                
+                card.classList.add('selected');
+                
+                
+                const cardId = card.getAttribute('data-id');
+                const targetPin = document.querySelector(`.map_pin[data-id="${cardId}"]`);
+                
+                if (targetPin) {
+                    targetPin.classList.add('active');
+                    // 이미지 교체
+                    targetPin.querySelector('img').src = PIN_RED;
                 }
             });
         });
