@@ -1,8 +1,9 @@
+<!--15_coffen_deatileReview.html-->
 <!DOCTYPE html>
 
 <html>
     <head>
-        <title>detail page-menu</title>
+        <title>detail page-review</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../../detail/detailpage.css">
         <link rel="stylesheet" href="../common/15_coffeen_common.css">
@@ -45,23 +46,17 @@
             <div class="detail-container">
                 <!---사진모음-->
                 <section class="photos-container">
-                    <div class="main-photo">
-                        <img src="../../assets/images/15_cafe1.jpeg" alt="" />
-                    </div>
-                    <div class="sub-photo">
-                        <img class="content" src="../../assets/images/15_cafe1.jpeg" alt="">
-                        <img class="content" src="../../assets/images/15_cafe1.jpeg" alt="">
-                        <img class="content" src="../../assets/images/15_cafe1.jpeg" alt="">
-                    </div>
+                    <div class="main-photo" id="mainImage"></div>
+                    <div class="sub-photo" id="subImage"></div>
                 </section>
                 <!---정보모음-->
                 <section class="info-container">
                     <!---정보-->
                     <div class="info">
                         <div class="top-inner">
-                            <a id="cafe-name">오트 성수</a>
-                            <button class="share">
-                                <!---공유 모양-->
+                            <a id="cafe-name"></a>
+                            <button id="openShareModal" class="share">
+                                <!---공유 버튼 svg-->
                                 <svg width="20" height="20" viewBox="0 0 20 20">
                                 <circle cx="15" cy="4.1667" r="2.5" fill="currentColor" stroke="#A0826D" stroke-width="1.666"/>
                                 <circle cx="5" cy="10" r="2.5" fill="currentColor" stroke="#A0826D" stroke-width="1.666"/>
@@ -69,16 +64,13 @@
                                 <path d="M7.15833 11.2583L12.85 14.575" stroke="#A0826D" stroke-width="1.666" stroke-linecap="round"/>
                                 <path d="M12.8417 5.425L7.15833 8.74167" stroke="#A0826D" stroke-width="1.666" stroke-linecap="round"/>
                                 </svg>
+                                <!---공유 버튼 svg-->
                             </button>
                         </div>
                         <div class="rate"> 
-                            <!-- 15_coffeen_중간과제/assets/icons/15_icon_star.svg -->
-                            <!-- 별점 아이콘 -->
-                            <svg id="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
-                            </svg>
-                            <a class="text">4.8</a>
-                            <a class="smalltxt">(234 리뷰)</a>
+                            <span class="icon-star"></span>
+                            <a class="text" id="rating"></a>
+                            <a class="smalltxt" id="reviews"></a>
                         </div>
                         <div class="middle">
                             <!---주소-->
@@ -89,7 +81,7 @@
                                     <path d="M10 10.8333C11.3807 10.8333 12.5 9.71406 12.5 8.33334C12.5 6.95263 11.3807 5.83334 10 5.83334C8.61929 5.83334 7.5 6.95263 7.5 8.33334C7.5 9.71406 8.61929 10.8333 10 10.8333Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span> 
-                                <a class="text">서울 성수동2가 273-10</a>
+                                <a class="text" id="location"></a>
                             </div>
 
                             <!---운영시간-->
@@ -107,7 +99,7 @@
                                     </defs>
                                     </svg>
                                 </span>
-                                <a class="text">09:00 - 19:00</a>
+                                <a class="text" id="hours"></a>
                             </div>
 
                             <!---전화번호-->
@@ -117,7 +109,7 @@
                                     <path d="M12.665 15.401C12.8715 15.4959 13.1042 15.5175 13.3247 15.4624C13.5452 15.4074 13.7403 15.2788 13.878 15.098L14.233 14.633C14.4193 14.3846 14.6609 14.183 14.9386 14.0442C15.2163 13.9053 15.5225 13.833 15.833 13.833H18.833C19.3634 13.833 19.8721 14.0437 20.2472 14.4188C20.6223 14.7939 20.833 15.3026 20.833 15.833V18.833C20.833 19.3634 20.6223 19.8721 20.2472 20.2472C19.8721 20.6223 19.3634 20.833 18.833 20.833C14.0591 20.833 9.48074 18.9366 6.10509 15.5609C2.72943 12.1853 0.833008 7.6069 0.833008 2.83301C0.833008 2.30257 1.04372 1.79387 1.41879 1.41879C1.79387 1.04372 2.30257 0.833008 2.83301 0.833008H5.83301C6.36344 0.833008 6.87215 1.04372 7.24722 1.41879C7.62229 1.79387 7.83301 2.30257 7.83301 2.83301V5.83301C7.83301 6.1435 7.76072 6.44972 7.62186 6.72744C7.48301 7.00515 7.2814 7.24671 7.03301 7.43301L6.56501 7.78401C6.38142 7.92419 6.25203 8.12359 6.1988 8.34836C6.14557 8.57312 6.17179 8.80938 6.27301 9.01701C7.63969 11.7929 9.88743 14.0378 12.665 15.401Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span>
-                                <a class="text">02-1234-5678</a>
+                                <a class="text" id="tel"></a>
                             </div>
 
                             <!---버튼모음-->
@@ -130,7 +122,7 @@
                                 후기 작성하기</button>
                                 <button class="like-btn">
                                     <span class="icon-heart"></span>
-                                    <span id="like-count">128</span>
+                                    <span id="like-count"></span>
                                 </button>
                             </div>
                         </div>
@@ -139,10 +131,7 @@
                     <!---태그-->
                     <div class="tag-container">
                         <div><a class="subhead">태그</a></div>
-                        <div class="tag-cluster">
-                            <div class="tag">#아늑한</div>
-                            <div class="tag">#자연</div>
-                            <div class="tag">#빈티지</div>
+                        <div class="tag-cluster" id="tag-cluster-container">
                         </div>
                     </div>
                 </section>
@@ -152,74 +141,45 @@
                 <!---1.네비게이션바-->
                 <nav class="navi-bar" id="target">
                     <ul>
-                        <li class="navi-item"><a href="15_coffeen_detailPhoto.html#target">사진<br>&nbsp;(4)</a></li>
-                        <li class="navi-item active"><a href="15_coffeen_detailReview.html#target">&nbsp;리뷰<br>(234)</a></li>
-                        <li class="navi-item"><a href="15_coffeen_detailMenu.html#target"><span>상세정보</span></a></li>
+                        <li class="navi-item has-count"><a href="15_coffeen_detailPhoto.html#target">사진<div id="photo-count"></div></a></li>
+                        <li class="navi-item has-count active"><a href="15_coffeen_detailReview.html#target">리뷰<div id="review-count"></div></a></li>
+                        <li class="navi-item has-ncount"><a href="15_coffeen_detailMenu.html#target"><span>상세정보</span></a></li>
                     </ul>
                 </nav>
                 <!---2.리뷰-->
-                <div class="box">
-                        <!--작성자 정보랑 별점-->
-                        <div class="review-top">
-                            <a class="subhead">카페러버</a>
-                            <!--별점-->
-                            <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
-                            </svg>
-                            <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
-                            </svg>
-                            <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
-                            </svg>
-                            <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
-                            </svg>
-                            <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
-                            </svg>
-                        </div>
-                    <!--날짜-->
-                    <div class="review-date"><a class="smalltxt">2025.01.15</a></div>
-                    <!--리뷰내용-->
-                    <div class="review-article"><a class="text">정말 분위기 좋고 커피도 맛있어요! 작업하기 딱 좋은 환경입니다.</a></div>
-                    <!--사진-->
-                    <div class="review-photo">
-                        <img src="../../assets/images/15_cafe2.jpeg" alt="" />
-                        <img src="../../assets/images/15_cafe3.jpeg" alt="" />
-                    </div>
-                </div>
-
-
-                <!---2.리뷰-->
-                <div class="box">
-                    <!--작성자 정보랑 별점-->
-                    <div class="review-top">
-                        <a class="subhead">브런치덕후</a>
-                        <!--별점-->
-                        <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
-                        </svg>
-                        <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
-                        </svg>
-                        <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
-                        </svg>
-                        <svg class="star" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 1.5L12.09 6.26L17.27 6.91L13.5 10.26L14.59 15.4L10 12.77L5.41 15.4L6.5 10.26L2.73 6.91L7.91 6.26L10 1.5Z" fill="#FFD256"></path>
-                        </svg>
-                    </div>
-                    <!--날짜-->
-                    <div class="review-date"><a class="smalltxt">2025.01.31</a></div>
-                    <!--리뷰내용-->
-                    <div class="review-article"><a class="text">브런치 메뉴가 정말 맛있어요. 다만 주말에는 사람이 많아서 예약하고 가는게 좋을 것 같아요.</a></div>
-                    <!--사진-->
-                    <div class="review-photo">
-                        <img src="../../assets/images/15_cafe4.jpeg" alt="" />
-                    </div>
+                <div class="review-list-container" id="review-cluster-container">
                 </div>
             <!--------->
+            </div>
         </div>
-        <script src="15_coffeen_detailPhoto.js"></script>
+
+        <!--모달 팝업-->
+        <div id="shareModal" class="modal">
+            <div class="modal_popup">
+                <div class="modal_header">
+                    <h2 style="color: var(--text-main);">공유하기</h2>
+                    <span type="button" class="close_btn">&times;</span>
+                </div>
+
+                <div class="share-options">
+                    <button class="share-btn" id="blogShare">
+                        <div class="shareImg">
+                            <img src="/assets/images/15_blog.png" alt="블로그 아이콘">
+                        </div>
+                        네이버 블로그
+                    </button>
+                    <button class="share-btn" id="kakaoShare">
+                        <div class="shareImg">
+                            <img src="/assets/images/15_kakaotalk.png" alt="카카오톡 아이콘">
+                        </div>
+                        카카오톡
+                    </button>
+                </div>
+                <div class="copy-link-area">
+                    <input type="text" id="copyLinkInput" readonly>
+                    <button id="copyLink" class="copy-btn">링크 복사</button>
+                </div>
+            </div>
+        </div>
+        <script src="15_coffeen_detail.js"></script>
     </body>
