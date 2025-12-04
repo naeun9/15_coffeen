@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         previewContainer.innerHTML = '';
 
         
-        selectedFiles.forEach((file, index) => {
+        selectedFiles.forEach((file) => {
             const reader = new FileReader();
             
             reader.onload = function(event) {
@@ -222,3 +222,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // 요소들 가져오기
     
     
+
