@@ -24,11 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             cafeData = JSON.parse(cafeData);
         }
+        /*
 
         originalData = cafeData; // 원본 백업
 
         renderCafeList(cafeData, cafeListContainer);
-        runMyCode(); 
+        runMyCode(); */
+        originalData = mapOnlyData; 
+        renderCafeList(mapOnlyData, cafeListContainer);
+
+        runMyCode();
+        
+        
     }
 
     // HTML 함수
@@ -322,3 +329,4 @@ document.addEventListener('DOMContentLoaded', () => {
     
     init();
 });
+
