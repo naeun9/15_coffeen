@@ -1,0 +1,12 @@
+{
+  "infiniteScrollData": [
+    { "img": "../assets/images/15_cafe3.jpeg", "tag": "#공부", "tall": false },
+    { "img": "../assets/images/15_cafe4.jpeg", "tag": "#모던", "tall": true },
+    { "img": "../assets/images/15_cafe5.jpeg", "tag": "#루프탑", "tall": false },
+    { "img": "../assets/images/15_cafe6.jpeg", "tag": "#아늑한", "tall": true },
+    { "img": "../assets/images/15_cafe1.jpeg", "tag": "#자연", "tall": false },
+    { "img": "../assets/images/15_cafe2.jpeg", "tag": "#빈티지", "tall": false },
+    { "img": "../assets/images/15_cafe4.jpeg", "tag": "#감성", "tall": true },
+    { "img": "../assets/images/15_cafe3.jpeg", "tag": "#베이커리", "tall": false }
+  ]
+}

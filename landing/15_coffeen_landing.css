@@ -1,0 +1,425 @@
+@charset "UTF-8";
+
+:root {
+    --bg: #FFFCF8;
+    --primary: #A0826D;
+    --secondary: #2C2C2C;
+    --text-sub: #AAA699;
+    --white: #FFFFFF;
+    --accent-soft: #D7E2D7;
+    --text-main: #726A55;
+    --border: #E5D5C1;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* 스크롤 스냅 설정 */
+html, body {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    overflow: hidden;
+    background-color: var(--bg);
+    color: var(--secondary);
+    font-family: 'Pretendard', sans-serif;
+}
+
+.snap-container {
+    width: 100%; height: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+/* 네비게이션 */
+nav {
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    padding: 30px 60px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    z-index: 1000; 
+    color: #FAFAFA; 
+    transition: color 0.3s;
+}
+
+/* 스크롤 시 네비게이션 색상 변경 */
+nav.scrolled {
+    color: #A0826D; 
+}
+
+.nav-left { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+.nav-logo { 
+    width: 32px; 
+    height: 32px; 
+    border-radius: 50%; 
+    border: 1px solid currentColor;
+    opacity: 0.7;
+}
+
+.logo { 
+    font-size: 18px; 
+    font-weight: 800; 
+    letter-spacing: 1px;
+    color: inherit;
+}
+
+.nav-right { 
+    display: flex; 
+    gap: 40px; 
+    font-size: 15px; 
+    font-weight: 500; 
+}
+
+.nav-right a { 
+    color: inherit; 
+    text-decoration: none; 
+    opacity: 0.8; 
+    transition: 0.3s; 
+}
+
+.nav-right a:hover { 
+    opacity: 1; 
+    text-decoration: underline; 
+    text-underline-offset: 4px; 
+}
+
+/* 섹션 공통 */
+section {
+    width: 100%; height: 100vh; position: relative;
+    scroll-snap-align: start; scroll-snap-stop: always;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    overflow: hidden;
+}
+
+/* 1. 페이지1 */
+.hero { 
+    position: relative;
+    color: var(--white); 
+    text-align: center;
+    background: transparent;
+}
+
+/* 비디오 컨테이너 */
+.video-container {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.video-container video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content { 
+    position: relative; 
+    z-index: 2; 
+}
+
+.hero h1 {
+    font-size: 8vw; 
+    font-weight: 900; 
+    line-height: 1; 
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    color: #FAFAFA; 
+    text-shadow: 0 4px 20px rgba(160, 130, 109, 0.3);
+    opacity: 0; 
+    transform: translateY(50px); 
+    animation: fadeInUp 1s ease forwards 0.2s;
+}
+
+.hero p {
+    font-size: 18px; 
+    letter-spacing: 2px; 
+    margin-bottom: 50px; 
+    color: var(--white);
+    opacity: 0.9;
+    opacity: 0; 
+    transform: translateY(50px); 
+    animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+/* 메인 버튼 */
+.hero-btn {
+    display: inline-block;
+    padding: 18px 60px; 
+    background-color: var(--white); 
+    color: var(--primary);
+    border-radius: 100px; 
+    font-size: 16px; 
+    font-weight: 700; 
+    text-decoration: none;
+    transition: 0.3s; 
+    opacity: 0; 
+    transform: translateY(50px); 
+    animation: fadeInUp 1s ease forwards 0.8s;
+}
+
+.hero-btn:hover { 
+    transform: scale(1.05); 
+    background-color: #F0F0F0; 
+}
+
+/* 스크롤 인디케이터 */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    z-index: 2;
+}
+
+.scroll-indicator::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-right: 2px solid #A0826D;
+    border-bottom: 2px solid #A0826D;
+    transform: rotate(45deg);
+    margin: 0 auto;
+}
+
+/* 2. 페이지 2 */
+.gallery-section {
+    background-color: #F0EBE5;
+    padding: 0; 
+    justify-content: space-between;
+}
+
+/* 그리드 컨테이너 */
+.bento-container {
+    width: 100%; 
+    max-width: 1400px;
+    height: calc(100vh - 160px); 
+    margin-top: 80px; 
+    padding: 0 40px;
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.bento-item {
+    position: relative; 
+    border-radius: 20px; 
+    overflow: hidden;
+    background: white; 
+    cursor: pointer;
+    opacity: 0; 
+    transform: scale(0.95); 
+    transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-item.visible { 
+    opacity: 1; 
+    transform: scale(1); 
+}
+
+/* 모자이크 배치 */
+.item-1 { grid-column: 1 / 3; grid-row: 1 / 3; } 
+.item-2 { grid-column: 3 / 4; grid-row: 1 / 2; }
+.item-3 { grid-column: 4 / 5; grid-row: 1 / 3; }
+.item-4 { grid-column: 3 / 4; grid-row: 2 / 3; }
+.item-5 { grid-column: 1 / 2; grid-row: 3 / 4; }
+.item-6 { grid-column: 2 / 4; grid-row: 3 / 4; }
+.item-7 { grid-column: 4 / 5; grid-row: 3 / 4; }
+
+.bento-item img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: 0.5s; 
+}
+
+.bento-item:hover img { 
+    transform: scale(1.1); 
+}
+
+.overlay {
+    position: absolute; 
+    inset: 0; 
+    background: rgba(0,0,0,0.2);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    opacity: 0; 
+    transition: 0.3s;
+}
+
+.bento-item:hover .overlay { 
+    opacity: 1; 
+}
+
+.overlay span {
+    color: white; 
+    font-weight: 600; 
+    border: 1px solid white;
+    padding: 6px 16px; 
+    border-radius: 30px; 
+    backdrop-filter: blur(4px);
+}
+
+/* 띠지 */
+.marquee-wrapper {
+    width: 100%; 
+    background: var(--primary); 
+    padding: 20px 0;
+    overflow: hidden; 
+    white-space: nowrap; 
+    z-index: 10;
+}
+
+.marquee-content { 
+    display: inline-block; 
+    animation: marquee 20s linear infinite; 
+}
+
+.marquee-item { 
+    font-size: 30px; 
+    font-weight: 800; 
+    color: var(--bg); 
+    margin-right: 60px;
+    display: inline-block; 
+}
+
+/* 3. 페이지 3 */
+.text-section { 
+    background-color: var(--accent-soft); 
+    color: var(--text-main); 
+    text-align: center; 
+}
+
+.text-content h2 {
+    font-size: 60px; 
+    font-weight: 700; 
+    margin-bottom: 30px;
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: 1s;
+    color: var(--primary); 
+}
+
+.text-content p {
+    font-size: 20px; 
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: 1s 0.2s;
+    color: var(--text-main); 
+}
+
+.text-section.active .text-content h2,
+.text-section.active .text-content p { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* 4. 푸터 */
+footer {
+    height: auto; 
+    min-height: 200px; 
+    background: #2C2C2C; 
+    color: #888;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    scroll-snap-align: end;
+}
+
+.footer-links a { 
+    color: #888; 
+    text-decoration: none; 
+    margin: 0 10px; 
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp { 
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+}
+
+@keyframes fadeIn { 
+    to { 
+        opacity: 1; 
+    } 
+}
+
+@keyframes marquee { 
+    0% { transform: translateX(0); } 
+    100% { transform: translateX(-50%); } 
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { 
+        transform: translateX(-50%) translateY(0); 
+    }
+    40% { 
+        transform: translateX(-50%) translateY(-20px); 
+    }
+    60% { 
+        transform: translateX(-50%) translateY(-10px); 
+    }
+}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+    .bento-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    
+    .item-1 { grid-column: 1 / 3; grid-row: 1 / 3; }
+    .item-2 { grid-column: 1 / 2; grid-row: 3 / 4; }
+    .item-3 { grid-column: 2 / 3; grid-row: 3 / 5; }
+    .item-4 { grid-column: 1 / 2; grid-row: 4 / 5; }
+    .item-5, .item-6, .item-7 { display: none; } 
+}
+
+@media (max-width: 768px) {
+    .nav-right { display: none; }
+    nav { padding: 20px; }
+    .hero h1 { font-size: 50px; }
+
+    .bento-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto;
+        padding: 80px 20px 20px;
+    }
+    
+    .bento-item {
+        width: 100%;
+        min-height: 200px;
+        display: block !important;
+    }
+    
+    .item-1 { min-height: 300px; }
+}
