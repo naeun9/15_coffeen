@@ -1,0 +1,206 @@
+<!--15_coffen_deatilePhoto.html-->
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>detail page-menu</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../detail/15_coffeen_detail.css">
+        <link rel="stylesheet" href="../common/15_coffeen_common.css">
+        
+        <style>
+        </style>
+    </head>
+
+    <body style="background-color: #F5F5F5;">
+        <!--메뉴바-->
+        <header class="coffeen-header">
+            <div class="header-inner">
+                <a href="../home/15_coffeen_home.html" class="header-logo">
+                <img src="../assets/images/15_logo.png" alt="Coffeen 로고" />
+                </a>
+                <nav class="header-nav">
+                    <a href="../home/15_coffeen_home.html" class="nav-item" data-page="home">home</a>
+                    <a href="../explore/15_coffeen_explore.html" class="nav-item" data-page="explore">explore</a>
+                    <a href="../map/15_coffeen_map.html" class="nav-item" data-page="map">map</a>
+                    <a href="../write/15_coffeen_write.html" class="nav-item" data-page="write">write</a>
+                    <a href="../mypage/15_coffeen_review.html" class="nav-item" data-page="mypage">my page</a>
+                </nav>
+            </div>
+        </header>
+        <!--------->
+
+        <!--뒤로가기-->
+        <nav class="go-back">
+            <button class="back-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M1 12H12 M6 17L1 12L6 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+            뒤로가기</button>
+        </nav>
+        <!--------->
+
+        <!-------메뉴바 아래 컨테이너------->
+        <div class="top-container">
+
+            <!---정보 블록-->
+            <div class="detail-container">
+                <!---사진모음-->
+                <section class="photos-container">
+                    <div class="main-photo" id="mainImage"></div>
+                    <div class="sub-photo" id="subImage"></div>
+                </section>
+                <!---정보모음-->
+                <section class="info-container">
+                    <!---정보-->
+                    <div class="info">
+                        <div class="top-inner">
+                            <a id="cafe-name"></a>
+                            <button id="openShareModal" class="share">
+                                <!---공유 버튼 svg-->
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                <circle cx="15" cy="4.1667" r="2.5" fill="currentColor" stroke="#A0826D" stroke-width="1.666"/>
+                                <circle cx="5" cy="10" r="2.5" fill="currentColor" stroke="#A0826D" stroke-width="1.666"/>
+                                <circle cx="15" cy="15.8333" r="2.5" fill="currentColor" stroke="#A0826D" stroke-width="1.666"/>
+                                <path d="M7.15833 11.2583L12.85 14.575" stroke="#A0826D" stroke-width="1.666" stroke-linecap="round"/>
+                                <path d="M12.8417 5.425L7.15833 8.74167" stroke="#A0826D" stroke-width="1.666" stroke-linecap="round"/>
+                                </svg>
+                                <!---공유 버튼 svg-->
+                            </button>
+                        </div>
+                        <div class="rate"> 
+                            <span class="icon-star"></span>
+                            <a class="text" id="rating"></a>
+                            <a class="smalltxt" id="reviews"></a>
+                        </div>
+                        <div class="middle">
+                            <!---주소-->
+                            <div>
+                                <span>
+                                    <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.6666 8.33332C16.6666 12.4942 12.0508 16.8275 10.5008 18.1658C10.3564 18.2744 10.1806 18.3331 9.99998 18.3331C9.81931 18.3331 9.64354 18.2744 9.49915 18.1658C7.94915 16.8275 3.33331 12.4942 3.33331 8.33332C3.33331 6.56521 4.03569 4.86952 5.28593 3.61928C6.53618 2.36904 8.23187 1.66666 9.99998 1.66666C11.7681 1.66666 13.4638 2.36904 14.714 3.61928C15.9643 4.86952 16.6666 6.56521 16.6666 8.33332Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 10.8333C11.3807 10.8333 12.5 9.71406 12.5 8.33334C12.5 6.95263 11.3807 5.83334 10 5.83334C8.61929 5.83334 7.5 6.95263 7.5 8.33334C7.5 9.71406 8.61929 10.8333 10 10.8333Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span> 
+                                <a class="text" id="location"></a>
+                            </div>
+
+                            <!---운영시간-->
+                            <div>
+                                <span>
+                                    <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_0_48)">
+                                    <path d="M10 5V10L13.3333 11.6667" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 18.3333C14.6024 18.3333 18.3334 14.6024 18.3334 9.99999C18.3334 5.39762 14.6024 1.66666 10 1.66666C5.39765 1.66666 1.66669 5.39762 1.66669 9.99999C1.66669 14.6024 5.39765 18.3333 10 18.3333Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_0_48">
+                                    <rect width="20" height="20" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                                </span>
+                                <a class="text" id="hours"></a>
+                            </div>
+
+                            <!---전화번호-->
+                            <div>
+                                <span>      
+                                    <svg id="call" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_0_54)">
+                                    <path d="M11.5267 13.8067C11.6988 13.8857 11.8927 13.9038 12.0764 13.8579C12.2602 13.812 12.4228 13.7048 12.5375 13.5542L12.8334 13.1667C12.9886 12.9597 13.1899 12.7917 13.4213 12.6759C13.6528 12.5602 13.9079 12.5 14.1667 12.5H16.6667C17.1087 12.5 17.5326 12.6756 17.8452 12.9881C18.1578 13.3007 18.3334 13.7246 18.3334 14.1667V16.6667C18.3334 17.1087 18.1578 17.5326 17.8452 17.8452C17.5326 18.1577 17.1087 18.3333 16.6667 18.3333C12.6884 18.3333 8.87313 16.753 6.06009 13.9399C3.24704 11.1269 1.66669 7.31157 1.66669 3.33332C1.66669 2.8913 1.84228 2.46737 2.15484 2.15481C2.4674 1.84225 2.89133 1.66666 3.33335 1.66666H5.83335C6.27538 1.66666 6.6993 1.84225 7.01186 2.15481C7.32443 2.46737 7.50002 2.8913 7.50002 3.33332V5.83332C7.50002 6.09206 7.43978 6.34725 7.32407 6.57868C7.20835 6.8101 7.04035 7.01141 6.83335 7.16666L6.44335 7.45916C6.29037 7.57597 6.18254 7.74214 6.13818 7.92945C6.09382 8.11675 6.11567 8.31364 6.20002 8.48666C7.33892 10.7999 9.21204 12.6707 11.5267 13.8067Z" stroke="#726A55" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_0_54">
+                                    <rect width="20" height="20" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                                </span>
+                                <a class="text" id="tel"></a>
+                            </div>
+
+                            <!---버튼모음-->
+                            <div class="btn-cluster">
+                                <button class="review-btn">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.6642 3.33334C11.9648 3.33334 12.2599 3.41467 12.5181 3.56871C12.7763 3.72275 12.988 3.94377 13.1309 4.20834L13.5359 4.95834C13.6787 5.22292 13.8904 5.44394 14.1486 5.59798C14.4068 5.75202 14.7019 5.83335 15.0025 5.83334H16.6667C17.1087 5.83334 17.5326 6.00894 17.8452 6.3215C18.1578 6.63406 18.3334 7.05798 18.3334 7.50001V15C18.3334 15.442 18.1578 15.866 17.8452 16.1785C17.5326 16.4911 17.1087 16.6667 16.6667 16.6667H3.33335C2.89133 16.6667 2.4674 16.4911 2.15484 16.1785C1.84228 15.866 1.66669 15.442 1.66669 15V7.50001C1.66669 7.05798 1.84228 6.63406 2.15484 6.3215C2.4674 6.00894 2.89133 5.83334 3.33335 5.83334H4.99752C5.29787 5.83336 5.59264 5.75221 5.85067 5.59848C6.1087 5.44475 6.32039 5.22415 6.46335 4.96001L6.87085 4.20668C7.01382 3.94253 7.22551 3.72194 7.48354 3.5682C7.74156 3.41447 8.03634 3.33333 8.33669 3.33334H11.6642Z" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M10 13.3333C11.3807 13.3333 12.5 12.2141 12.5 10.8333C12.5 9.45263 11.3807 8.33334 10 8.33334C8.61929 8.33334 7.5 9.45263 7.5 10.8333C7.5 12.2141 8.61929 13.3333 10 13.3333Z" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                후기 작성하기</button>
+                                <button class="like-btn">
+                                    <span class="icon-heart"></span>
+                                    <span id="like-count"></span>
+                            </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!---태그-->
+                    <div class="tag-container">
+                        <div><a class="subhead">태그</a></div>
+                        <div class="tag-cluster" id="tag-cluster-container">
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!---상세정보 블록-->
+            <section class="detailpage-container">
+                <!---1.네비게이션바-->
+                <nav class="navi-bar" id="target">
+                    <ul>
+                        <li class="navi-item has-count active"><a href="15_coffeen_detailPhoto.html#target">사진<div id="photo-count"></div></a></li>
+                        <li class="navi-item has-count"><a href="15_coffeen_detailReview.html#target">리뷰<div id="review-count"></div></a></li>
+                        <li class="navi-item has-ncount"><a href="15_coffeen_detailMenu.html#target"><span>상세정보</span></a></li>
+                    </ul>
+                </nav>
+                <!---2.사진-->
+                <div class="photos-box">
+                    <button class="carousel-nav prev">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <div class="slider-wrapper">
+                        <div class="photos" id="reviewPhoto">
+                        </div>
+                    </div>
+                    <button class="carousel-nav next">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                </div>
+            </section>
+        
+        <!--모달 팝업-->
+        <div id="shareModal" class="modal">
+            <div class="modal_popup">
+                <div class="modal_header">
+                    <h2 style="color: var(--text-main);">공유하기</h2>
+                    <span type="button" class="close_btn">&times;</span>
+                </div>
+
+                <div class="share-options">
+                    <button class="share-btn" id="blogShare">
+                        <div class="shareImg">
+                            <img src="/assets/images/15_blog.png" alt="블로그 아이콘">
+                        </div>
+                        네이버 블로그
+                    </button>
+                    <button class="share-btn" id="kakaoShare">
+                        <div class="shareImg">
+                            <img src="/assets/images/15_kakaotalk.png" alt="카카오톡 아이콘">
+                        </div>
+                        카카오톡
+                    </button>
+                </div>
+                <div class="copy-link-area">
+                    <input type="text" id="copyLinkInput" readonly>
+                    <button id="copyLink" class="copy-btn">링크 복사</button>
+                </div>
+            </div>
+        </div>
+        <script src="15_coffeen_detail.js"></script>
+    </body>
+
